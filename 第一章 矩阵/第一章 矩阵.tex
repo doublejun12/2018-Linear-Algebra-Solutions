@@ -1,0 +1,1363 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{xeCJK}
+
+\def\*#1{\mathbf{#1}}
+\def\rand{\xleftarrow{\$}}
+
+\title{}
+\author{}
+\date{}
+\begin{document}
+
+\chapter*{第一章：矩阵}
+
+\noindent 1.计算下列矩阵的乘积：\\
+\noindent (1)
+$
+\left[
+\begin{matrix}
+4 & 3 & 1 \\
+1 & -2 & 3 \\
+5 & 7 & 0
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+7 \\
+2 \\
+1
+\end{matrix}
+\right]; 
+$
+
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	4 & 3 & 1 \\
+	1 & -2 & 3 \\
+	5 & 7 & 0
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	7 \\
+	2 \\
+	1
+	\end{matrix}
+	\right]=\left[
+	\begin{matrix}
+	35 \\
+	6 \\
+	49
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+
+\noindent (2)
+$
+\left[
+\begin{matrix}
+1 & 2 & 3 \\
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+3 \\
+2 \\
+1
+\end{matrix}
+\right]; 
+$
+
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 \\
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	3 \\
+	2 \\
+	1
+	\end{matrix}
+	\right]=10
+	$$
+\end{proof}
+
+\noindent (3)
+$
+\left[
+\begin{matrix}
+2 \\
+1 \\
+3 
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+-1 & 2
+\end{matrix}
+\right]; 
+$
+
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	2 \\
+	1 \\
+	3 
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	-1 & 2
+	\end{matrix}
+	\right]=\left[
+	\begin{matrix}
+	-2 & 4 \\
+	-1 & 2 \\
+	-3 & 6 
+	\end{matrix}
+	\right] 
+	$$
+\end{proof}
+
+\noindent (4)
+$
+\left[
+\begin{matrix}
+2 & 1 & 4 & 0 \\
+1 & -1 & 3 & 4 
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+1 & 3 & 1 \\
+0 & -1 & 2 \\
+1 & -3 & 1 \\
+4 & 0 & -2
+\end{matrix}
+\right]; 
+$
+
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	2 & 1 & 4 & 0 \\
+	1 & -1 & 3 & 4 
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	1 & 3 & 1 \\
+	0 & -1 & 2 \\
+	1 & -3 & 1 \\
+	4 & 0 & -2
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	6 & -7 & 8 \\
+	20 & -5 & -6
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+
+\noindent (5)
+$
+\left[
+\begin{matrix}
+x_{1} & x_{2} & x_{3} 
+\end{matrix}
+\right] 
+\left[
+\begin{matrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{matrix}
+\right];
+$
+
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	x_{1} & x_{2} & x_{3} 
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	a_{11} & a_{12} & a_{13} \\
+	a_{12} & a_{22} & a_{23} \\
+	a_{13} & a_{23} & a_{33}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	x_{1} \\
+	x_{2} \\
+	x_{3}
+	\end{matrix}
+	\right] \\
+	= \left[
+	\begin{matrix}
+	a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3} & a_{12}x_{1}+a_{22}x_{2}+a_{23}x_{3} & a_{13}x_{1}+a_{23}x_{2}+a_{33}x_{3}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	x_{1} \\
+	x_{2} \\
+	x_{3}
+	\end{matrix}
+	\right] \\
+	= a_{11}x_{1}^{2} + a_{22}x_{2}^{2} + a_{33}x_{3}^{2} + 2a_{12}x_{1}x_{2} + 2a_{13}x_{1}x_{3} + 2a_{23}x_{2}x_{3}
+	$
+\end{proof}
+\noindent 2.设$A = \left[
+\begin{matrix}
+1 & 1 & 1 \\
+1 & 1 & -1 \\
+1 & -1 & 1 
+\end{matrix}
+\right]$，$B = \left[
+\begin{matrix}
+1 & 2 & 3 \\
+-1 & -2 & 4 \\
+0 & 5 & 1 
+\end{matrix}
+\right]$，求$3AB-2A$.
+
+\begin{proof}[解]
+	$3AB = 3\left[
+	\begin{matrix}
+	1 & 1 & 1 \\
+	1 & 1 & -1 \\
+	1 & -1 & 1 
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 \\
+	-1 & -2 & 4 \\
+	0 & 5 & 1 
+	\end{matrix}
+	\right] = 3
+	\left[
+	\begin{matrix}
+	0 & 5 & 8 \\
+	0 & -5 & 6 \\
+	2 & 9 & 0 
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	0 & 15 & 24 \\
+	0 & -15 & 18 \\
+	6 & 27 & 0 
+	\end{matrix}
+	\right]\\
+	2A = 
+	\left[
+	\begin{matrix}
+	2 & 2 & 2 \\
+	2 & 2 & -2 \\
+	2 & -2 & 2 
+	\end{matrix}
+	\right]\\
+	3AB-2A = 
+	\left[
+	\begin{matrix}
+	-2 & 13 & 22 \\
+	-2 & -17 & 20 \\
+	4 & 29 & -2 
+	\end{matrix}
+	\right]
+	$
+\end{proof}
+\noindent 4.(1)设$A,B$为$n$阶矩阵，且$A$为对称阵，证明$B^{T}AB$也是对称矩阵;
+\begin{proof}[证]
+	因为$A$为对称矩阵，所以$A^{T} = A$\\
+	$(B^{T}AB)^{T} = ((B^{T}A)B)^{T} = B^{T}(B^{T}A)^{T} = B^{T}(A^{T}B) = B^{T}A^{T}B = B^{T}AB$\\
+	所以$B^{T}AB$也是对称矩阵
+\end{proof}
+
+\noindent (2)设$A,B$为$n$阶对称矩阵，证明$AB$为对称矩阵的充分必要条件是$AB=BA$
+\begin{proof}[证]
+	$A,B$为$n$阶对称矩阵,则$A^{T} = A, B^{T} = B$\\
+	$(AB)^{T} = AB \Leftrightarrow B^{T}A^{T} = AB \Leftrightarrow BA = AB$
+\end{proof}
+
+\noindent 7.已知
+$
+\left[
+\begin{matrix}
+a & 1 & 1 \\
+3 & 0 & 1 \\
+0 & 2 & -1 
+\end{matrix}
+\right]
+\left[
+\begin{matrix}
+3 \\
+a \\
+-3
+\end{matrix}
+\right] = 
+\left[
+\begin{matrix}
+b \\
+6 \\
+b
+\end{matrix}
+\right] 
+$，求$a$和$b$.
+\begin{proof}[证]
+	$
+	\left[
+	\begin{matrix}
+		a & 1 & 1 \\
+		3 & 0 & 1 \\
+		0 & 2 & -1 
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+		3 \\
+		a \\
+		-3
+	\end{matrix}
+	\right] =
+	\left[
+	\begin{matrix}
+	4a-3 \\
+	6 \\
+	2a+3
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	b \\
+	6 \\
+	b
+	\end{matrix}
+	\right] 
+	$\\
+	得到：\\
+	$$
+	\left\{
+	\begin{aligned}
+	4a-3=b \\
+	2a+3=b 
+	\end{aligned}
+	\right.
+	$$
+	解得：\\
+	$$
+	\left\{
+	\begin{aligned}
+	a=3 \\
+	b=9 
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent 9.计算下列矩阵的$n$次方幂：\\
+\noindent (1) 设$A = \alpha^{T} \beta$，其中$\alpha = [1, 2, 3], \beta = [1,\frac{1}{2},\frac{1}{3}]$，求$A^{n}$;
+\begin{proof}[解]
+	$
+	A^{n} = (\alpha^{T} \beta)^{n} = (\alpha^{T} \beta)(\alpha^{T} \beta)\cdots(\alpha^{T} \beta) = \alpha^{T} (\beta\alpha^{T})(\beta\alpha^{T})\cdots(\beta\alpha^{T}) \beta\\
+	= \alpha^{T} (\beta\alpha^{T})^{n-1} \beta\\
+	\alpha^{T} \beta = 
+	\left[
+	\begin{matrix}
+	1 \\
+	2 \\
+	3
+	\end{matrix}
+	\right] 
+	\left[
+	\begin{matrix}
+	1 & \frac{1}{2} & \frac{1}{3}
+	\end{matrix}
+	\right]=
+	\left[
+	\begin{matrix}
+	1 & \frac{1}{2} & \frac{1}{3} \\
+	2 & 1 & \frac{2}{3} \\
+	3 & \frac{3}{2} & 1
+	\end{matrix}
+	\right] \\
+	\beta \alpha^{T} = 
+	\left[
+	\begin{matrix}
+	1 & \frac{1}{2} & \frac{1}{3}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	1 \\
+	2 \\
+	3
+	\end{matrix}
+	\right] = 3
+	$\\
+	所以
+	$
+	A^{n} = (\beta\alpha^{T})^{n-1}\alpha^{T} \beta = 3^{n-1}\left[
+	\begin{matrix}
+	1 & \frac{1}{2} & \frac{1}{3} \\
+	2 & 1 & \frac{2}{3} \\
+	3 & \frac{3}{2} & 1
+	\end{matrix}
+	\right] \\
+	$
+\end{proof}
+\noindent (2)设
+$B = 
+\left[
+\begin{matrix}
+1 & 2 & 3 \\
+2 & 4 & 6 \\
+3 & 6 & 9
+\end{matrix}
+\right] 
+$
+求$B^{n}$;
+\begin{proof}[解]
+	$B = 
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 \\
+	2 & 4 & 6 \\
+	3 & 6 & 9
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	1 \\
+	2 \\
+	3 
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 
+	\end{matrix}
+	\right] = \alpha^{T} \beta
+	$\\
+	其中
+	$
+	\alpha = \beta = [1, 2, 3]
+	$\\
+	$
+	\beta \alpha^{T} = 
+	\left[
+	\begin{matrix}
+		1 & 2 & 3
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+		1 \\
+		2 \\
+		3
+	\end{matrix}
+	\right] = 14
+	$\\
+	由1可知
+	$
+	B^{n} = (\beta\alpha^{T})^{n-1}\alpha^{T}\beta = 14^{n-1}B
+	$
+\end{proof}
+\noindent 10.试证：
+\noindent (1)与所有$n$阶对角阵乘法可交换的矩阵也必是$n$阶对角阵；
+\begin{proof}[证]
+	假设$n$阶对角阵为
+	$B=
+	\left[
+	\begin{matrix}
+	b_{11} & \\
+	   	   &b_{22}\\
+	   	   & & \ddots\\
+	   	   & & & b_{nn}
+	\end{matrix}
+	\right]
+	$\\
+	与所有$n$阶对角阵可交换的矩阵为
+	$A=
+	\left[
+	\begin{matrix}
+	a_{11} & a_{12} & \cdots & a_{1n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1} & a_{n2} & \cdots & a_{nn}
+	\end{matrix}
+	\right]
+	$\\
+	$
+	BA = 
+	\left[
+	\begin{matrix}
+	b_{11} & \\
+	&b_{22}\\
+	& & \ddots\\
+	& & & b_{nn}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	a_{11} & a_{12} & \cdots & a_{1n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1} & a_{n2} & \cdots & a_{nn}
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	a_{11}b_{11} & a_{12}b_{11} & \cdots & a_{1n}b_{11}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1}b_{nn} & a_{n2}b_{nn} & \cdots & a_{nn}b_{nn}
+	\end{matrix}
+	\right]
+	$\\
+	$
+	AB = 
+	\left[
+	\begin{matrix}
+	a_{11} & a_{12} & \cdots & a_{1n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1} & a_{n2} & \cdots & a_{nn}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	b_{11} & \\
+	&b_{22}\\
+	& & \ddots\\
+	& & & b_{nn}
+	\end{matrix}
+	\right]=
+	\left[
+	\begin{matrix}
+	a_{11}b_{11} & a_{12}b_{22} & \cdots & a_{1n}b_{nn}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1}b_{11} & a_{n2}b_{22} & \cdots & a_{nn}b_{nn}
+	\end{matrix}
+	\right]
+	$
+	若$AB=BA$则当$i \neq j$ 时有
+	$
+	a_{ij}b_{ii} = a_{ij}b_{jj}
+	$\\
+	由于$B$是任意的，所以$b_{ii} = b_{jj}$不一定成立\\
+	所以，要使等式恒成立，必有$a_{ij} = 0 (i \neq j)$,即$A$为对角矩阵
+\end{proof}
+\noindent (2)与所有$n$阶矩阵乘法可交换矩阵为纯量阵；
+\begin{proof}[证]
+	与所有矩阵乘法可交换则必然与所有对角阵乘法可交换，所以由(1)知该矩阵必为对角阵\\
+	此时由题意知(1)中$A$是任意的,即对于任意$A$当$i \neq j$ 时有
+	$
+	a_{ij}b_{ii} = a_{ij}b_{jj}
+	$\\
+	由于$A$是任意的，所以$a_{ij} = 0$不一定成立\\
+	所以，要使等式恒成立，对于任意$i \neq j$有$b_{ii} = b_{jj}$,即$B$为纯量阵
+\end{proof}
+\noindent 11.证明：两个对角元为1的上三角矩阵乘积仍然是对角元为1的上三角矩阵.
+\begin{proof}[证]
+	令$A=(a_{ij})_{n \times n}$,$B=(b_{ij})_{n \times n}$,由题意知，当$i = j$时$a_{ij} = b_{ij}= 1$, 当$i > j$时$a_{ij} = b_{ij} = 0$\\
+	$AB = (\sum\limits_{k=1}^{n}a_{ik}b_{kj})_{n \times n}$\\
+	当$i = j$时，$\sum\limits_{k=1}^{n}a_{ik}b_{kj} = \sum\limits_{k=1}^{n}a_{ik}b_{ki}\\
+	= \sum\limits_{1 \leq k < i}a_{ik}b_{ki} + \sum\limits_{k=i}a_{ik}b_{ki} + \sum\limits_{i < k \leq n}a_{ik}b_{ki} = a_{ii}b_{ii} = 1$\\
+	当$i > j$时，$\sum\limits_{k=1}^{n}a_{ik}b_{kj} = \sum\limits_{1 \leq k < i}a_{ik}b_{kj} + \sum\limits_{i \leq k \leq n}a_{ik}b_{kj} = 0$\\
+	所以$AB$也是对角元为1的上三角矩阵
+\end{proof}
+\noindent 12.设$n$元向量$
+x=\left[
+\begin{matrix}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{matrix}
+\right]
+,
+y=\left[
+\begin{matrix}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{matrix}
+\right]
+$，若$A=yx^{T}$，求$A^{k}(k \in N^{+})$.
+\begin{proof}[解]
+	$yx^{T}=
+	\left[
+	\begin{matrix}
+	y_{1} \\
+	y_{2} \\
+	\vdots \\
+	y_{n}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	x_{1} & x_{2} & \cdots & x_{n}
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	x_{1}y_{1} & x_{2}y_{1} & \cdots & x_{n}y_{1} \\
+	x_{1}y_{2} & x_{2}y_{2} & \cdots & x_{n}y_{2} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	x_{1}y_{n} & x_{2}y_{n} & \cdots & x_{n}y_{n} \\
+	\end{matrix}
+	\right]\\
+	x^{T}y =
+	\left[
+	\begin{matrix}
+	x_{1} & x_{2} & \cdots & x_{n}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	y_{1} \\
+	y_{2} \\
+	\vdots \\
+	y_{n}
+	\end{matrix}
+	\right] = \sum\limits_{i = 1}^{n}x_{i}y_{i}\\
+	A^{k} = (yx^{T})^k = (yx^{T})(yx^{T}) \cdots (yx^{T}) = y(x^{T}y)(x^{T}y) \cdots (x^{T}y)x^{T} \\
+	= (x^{T}y)^{k-1}yx^{T} = (\sum\limits_{i = 1}^{n}x_{i}y_{i})^{k-1}yx^{T} = (\sum\limits_{i = 1}^{n}x_{i}y_{i})^{k-1}\left[
+	\begin{matrix}
+	x_{1}y_{1} & x_{2}y_{1} & \cdots & x_{n}y_{1} \\
+	x_{1}y_{2} & x_{2}y_{2} & \cdots & x_{n}y_{2} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	x_{1}y_{n} & x_{2}y_{n} & \cdots & x_{n}y_{n} \\
+	\end{matrix}
+	\right]\\
+	$
+\end{proof}
+\noindent 13.设$n(n \geq 2)$元向量$x = 
+\left[
+\begin{matrix}
+\frac{1}{2}\\
+0 \\
+\vdots \\
+0 \\
+\frac{1}{2}
+\end{matrix}
+\right],
+A = I_{n}-xx^{T}, 
+B = I_{n}+2xx^{T}
+$,求$AB$.
+\begin{proof}[解]
+	$AB = (I_{n}-xx^{T})(I_{n}+2xx^{T}) = I_{n}-xx^{T}+2xx^{T}-2xx^{T}xx^{T}\\
+	= I_{n}+xx^{T}-2xx^{T}xx^{T}\\
+	x^{T}x = \left[
+	\begin{matrix}
+	\frac{1}{2} & 0 & \cdots & 0 &\frac{1}{2}
+	\end{matrix}
+	\right]
+	\left[
+	\begin{matrix}
+	\frac{1}{2}\\
+	0 \\
+	\vdots \\
+	0 \\
+	\frac{1}{2}
+	\end{matrix}
+	\right] = \frac{1}{4}+\frac{1}{4} = \frac{1}{2}$
+	所以：
+	$
+	AB = I_{n}+xx^{T}-2xx^{T}xx^{T} = I_{n}+xx^{T}-2x(x^{T}x)x^{T} = I_{n}+xx^{T}-xx^{T} = I_{n}
+	$
+\end{proof}
+\noindent 14.设$A$是$m \times n$矩阵.证明:若对于任何$n$元列向量$x$成立$Ax=0$,则$A=O_{m \times n}$.
+\begin{proof}[证]
+	假设$A = 
+	\left[
+	\begin{matrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	a_{21} & a_{22} & \cdots & a_{2n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	a_{m1} & a_{m2} & \cdots & a_{mn} \\
+	\end{matrix}
+	\right],
+	x = 
+	\left[
+	\begin{matrix}
+	x_{1} \\
+	x_{2} \\
+	\vdots\\
+	x_{n} 
+	\end{matrix}
+	\right]
+	$
+	则
+	$
+	Ax = \left[
+	\begin{matrix}
+	\sum\limits_{i = 1}^{n}a_{1i}x_{i} \\
+	\sum\limits_{i = 1}^{n}a_{2i}x_{i} \\
+	\vdots\\
+	\sum\limits_{i = 1}^{n}a_{mi}x_{i} 
+	\end{matrix}
+	\right] = 0
+	$\\
+	由于$x$的任意性，不妨假设
+	$
+	x = 
+	\left[
+	\begin{matrix}
+	1 \\
+	0 \\
+	\vdots\\
+	0 
+	\end{matrix}
+	\right]
+	$
+	此时
+	$
+	Ax = \left[
+	\begin{matrix}
+	a_{11}\\
+	a_{21}\\
+	\vdots\\
+	a_{m1}
+	\end{matrix}
+	\right] = 0
+	$\\
+	接下来不妨假设
+	$
+	x = 
+	\left[
+	\begin{matrix}
+	0 \\
+	1 \\
+	\vdots\\
+	0 
+	\end{matrix}
+	\right]
+	$
+	此时
+	$
+	Ax = \left[
+	\begin{matrix}
+	a_{12}\\
+	a_{22}\\
+	\vdots\\
+	a_{m2}
+	\end{matrix}
+	\right] = 0\\
+	\cdots
+	$\\
+	经过$n$次假设后我们得到$A$的每列都是0，即$A=O_{m \times n}$
+\end{proof}
+\noindent 24.设
+$$
+A = \left[
+\begin{matrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+-1 & 2 & 1 & 0\\
+1 & 1 & 0 & 1
+\end{matrix}
+\right], 
+B = \left[
+\begin{matrix}
+1 & 0 & 1 & 0\\
+-1 & 2 & 0 & 1\\
+1 & 0 & 4 & 1\\
+-1 & -1 & 2 & 0
+\end{matrix}
+\right]
+$$
+利用分块矩阵求$AB$.
+\begin{proof}[解]
+	令
+	$
+	A = \left[
+	\begin{matrix}
+	A_{11} & A_{12}\\
+	A_{21} & A_{22}
+	\end{matrix}
+	\right], B = \left[
+	\begin{matrix}
+	B_{11} & B_{12}\\
+	B_{21} & B_{22}
+	\end{matrix}
+	\right]
+	$\\
+	其中，\\
+	$
+	A_{11} = \left[
+	\begin{matrix}
+	1 & 0\\
+	0 & 1
+	\end{matrix}
+	\right] = I,
+	A_{12} = \left[
+	\begin{matrix}
+	0 & 0\\
+	0 & 0
+	\end{matrix}
+	\right] = O,
+	A_{21} = \left[
+	\begin{matrix}
+	-1 & 2\\
+	1 & 1
+	\end{matrix}
+	\right],
+	A_{22} = \left[
+	\begin{matrix}
+	1 & 0\\
+	0 & 1
+	\end{matrix}
+	\right] = I\\
+	\\
+	B_{11} = \left[
+	\begin{matrix}
+	1 & 0\\
+	-1 & 2
+	\end{matrix}
+	\right],
+	B_{12} = \left[
+	\begin{matrix}
+	1 & 0\\
+	0 & 1
+	\end{matrix}
+	\right] = I,
+	B_{21} = \left[
+	\begin{matrix}
+	1 & 0\\
+	-1 & -1
+	\end{matrix}
+	\right],
+	B_{22} = \left[
+	\begin{matrix}
+	4 & 1\\
+	2 & 0
+	\end{matrix}
+	\right]\\
+	$\\
+	则,
+	$
+	AB = \left[
+	\begin{matrix}
+	A_{11}B_{11}+A_{12}B_{21} & A_{11}B_{12}+A_{12}B_{22}\\
+	A_{21}B_{11}+A_{22}B_{21} & A_{21}B_{12}+A_{22}B_{22}
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	B_{11} & I\\
+	A_{21}B_{11}+B_{21} & A_{21}+B_{22}
+	\end{matrix}
+	\right]\\
+	\\
+	A_{21}B_{11}+B_{21} = \left[
+	\begin{matrix}
+	-1 & 2\\
+	1 & 1
+	\end{matrix}
+	\right]\left[
+	\begin{matrix}
+	1 & 0\\
+	-1 & 2
+	\end{matrix}
+	\right]+\left[
+	\begin{matrix}
+	1 & 0\\
+	-1 & -1
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	-2 & 4\\
+	-1 & 1
+	\end{matrix}
+	\right]\\
+	A_{21}+B_{22} = \left[
+	\begin{matrix}
+	-1 & 2\\
+	1 & 1
+	\end{matrix}
+	\right] + \left[
+	\begin{matrix}
+	4 & 1\\
+	2 & 0
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	3 & 3\\
+	3 & 1
+	\end{matrix}
+	\right]
+	$\\
+	\\
+	所以
+	$
+	AB = \left[
+	\begin{matrix}
+	1 & 0 & 1 & 0\\
+	-1 & 2 & 0 & 1\\
+	-2 & 4 & 3 & 3\\
+	-1 & 1 & 3 & 1
+	\end{matrix}
+	\right]
+	$
+\end{proof}
+\noindent 25.求矩阵$A, B$的秩，其中：
+$$
+A = \left[
+\begin{matrix}
+1 & 2 & 3\\
+2 & 3 & -5\\
+4 & 7 & 1
+\end{matrix}
+\right]
+$$
+$$
+B = \left[
+\begin{matrix}
+3 & 2 & 0 & 5 & 0\\
+3 & -2 & 3 & 6 & -1\\
+2 & 0 & 1 & 5 & -3\\
+1 & 6 & -4 & -1 & 4
+\end{matrix}
+\right]
+$$
+\begin{proof}[解]
+	$
+	A \xrightarrow[R_{3}-4R_{1}]{R_{2}-2R_{1}} \left[
+	\begin{matrix}
+	1 & 2 & 3\\
+	0 & -1 & -11\\
+	0 & -1 & -11
+	\end{matrix}
+	\right] \xrightarrow{R_{3} - R_{2}} \left[
+	\begin{matrix}
+	1 & 2 & 3\\
+	0 & -1 & -11\\
+	0 & 0 & 0
+	\end{matrix}
+	\right]
+	$\\
+	所以，$rank(A) = 2$\\
+	$
+	B \xrightarrow{R_{14}} \left[
+	\begin{matrix}
+	1 & 6 & -4 & -1 & 4\\
+	3 & -2 & 3 & 6 & -1\\
+	2 & 0 & 1 & 5 & -3\\
+	3 & 2 & 0 & 5 & 0
+	\end{matrix}
+	\right] \xrightarrow[R_{3}-2R_{1};R_{4}-3R_{1}]{R_{2}-3R_{1}} \left[
+	\begin{matrix}
+	1 & 6 & -4 & -1 & 4\\
+	0 & -20 & 15 & 9 & -13\\
+	0 & -12 & 9 & 7 & -11\\
+	0 & -16 & 12 & 8 & -12
+	\end{matrix}
+	\right]\\
+	\xrightarrow[R_{24}]{\frac{1}{4}R_{4}} \left[
+	\begin{matrix}
+	1 & 6 & -4 & -1 & 4\\
+	0 & -4 & 3 & 2 & -3\\
+	0 & -12 & 9 & 7 & -11\\
+	0 & -20 & 15 & 9 & -13
+	\end{matrix}
+	\right] \xrightarrow[R_{4}-5R_{2}]{R_{3}-3R_{2}} \left[
+	\begin{matrix}
+	1 & 6 & -4 & -1 & 4\\
+	0 & -4 & 3 & 2 & -3\\
+	0 & 0 & 0 & 1 & -2\\
+	0 & 0 & 0 & -1 & 2
+	\end{matrix}
+	\right] \\
+	\xrightarrow{R_{4}+R_{3}} \left[
+	\begin{matrix}
+	1 & 6 & -4 & -1 & 4\\
+	0 & -4 & 3 & 2 & -3\\
+	0 & 0 & 0 & 1 & -2\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$
+	所以，$rank(B) = 3$
+\end{proof}
+\noindent 26.设
+$$
+A = \left[
+\begin{matrix}
+1 & 2 & -1 & 1\\
+3 & 2 & \lambda & -1\\
+5 & 6 & 3 & \mu
+\end{matrix}
+\right]
+$$
+已知$rank(A) = 2$,求$\lambda$和$\mu$的值.
+\begin{proof}[解]
+	$
+	A \xrightarrow[R_{5}-5R_{1}]{R_{3}-3R_{1}} \left[
+	\begin{matrix}
+	1 & 2 & -1 & 1\\
+	0 & -4 & \lambda + 3 & -4\\
+	0 & -4 & 8 & \mu - 5
+	\end{matrix}
+	\right] \xrightarrow{R_{3} -R_{2}} \left[
+	\begin{matrix}
+	1 & 2 & -1 & 1\\
+	0 & -4 & \lambda + 3 & -4\\
+	0 & 0 & 5 - \lambda & \mu - 1
+	\end{matrix}
+	\right]
+	$\\
+	而$rank(A) = 2$,所以$5-\lambda = 0, \mu - 1 = 0$,即$\lambda = 5, \mu = 1$
+\end{proof}
+\noindent 28.设$A$是$n$阶方阵,满足$A^{2}=I_{n}$,求证:$rank(A+I_{n})+rank_(A-I_{n}) = n$.
+\begin{proof}[证]
+	$A^{2}=I_{n} \Rightarrow A^{2}-I_{n} = O \Rightarrow (A + I_{n})(A - I_{n}) = O$\\
+	由$r(A) + r(B) \geq r(A + B)$,得到$r(A+I_{n})+r(A-I_{n}) \geq r(2A) = r(A) = n$\\
+	由$r(A) + r(B) \leq r(AB)+n$,得到$r(A+I_{n})+r(A-I_{n}) \leq n$\\
+	所以，我们得到$r(A+I_{n})+r(A-I_{n}) = n$
+\end{proof}
+\noindent 29.设$A$为$n$阶矩阵，则$rank(A)=1$的充分必要条件是存在矩阵$B_{n \times 1}$和$C_{n \times 1}(B \neq O, C \neq O)$,使得$A=BC$.
+\begin{proof}[证]
+	1.必要性：\\
+	因为$rank(A) = 1$,则$A$为非零矩阵且A的任意两行成比例，所以存在向量$\alpha$, 以及不全为$0$的实数$b_{1}, b_{2} \cdots b_{n}$，使得$A = 
+	\left[
+	\begin{matrix}
+	b_{1}\alpha\\
+	b_{2}\alpha\\
+	\vdots\\
+	b_{n}\alpha
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	b_{1}\\
+	b_{2}\\
+	\vdots\\
+	b_{n}
+	\end{matrix}
+	\right] \alpha$\\
+	所以，存在$B = \left[
+	\begin{matrix}
+	b_{1}\\
+	b_{2}\\
+	\vdots\\
+	b_{n}
+	\end{matrix}
+	\right], C = \alpha$，使得$A=BC$.\\
+	2.充分性：\\
+	因为$A = BC$，则$A$的每行成比例，所以$rank(A) = 1$
+\end{proof}
+\noindent 30.设$A$为$m \times n$矩阵，且$rank(A)=r$，从$A$中任取$s$行构建一个$s \times n$矩阵$B$，证明$rank(B) \geq r+s-m$
+\begin{proof}[证]
+	不妨假设$A$中剩下的$m-s$行构成矩阵$C$，则有$rank(A) \leq rank(B)+rank(C)$\\
+	而$C$为$(m-s) \times n$的矩阵，所以$rank(C) \leq m-s$\\
+	则$rank(A) \leq rank(B)+rank(C) \leq rank(B)+m-s$\\
+	$rank(B) \geq rank(A)+s-m = r+s-m$
+\end{proof}
+\noindent 31.设$n(n \geq 3)$阶矩阵
+$$
+A = \left[
+\begin{matrix}
+1 & a & a & \cdots & a\\
+a & 1 & a & \cdots & a\\
+a & a & 1 & \cdots & a\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\
+a & a & a & \cdots & 1
+\end{matrix}
+\right]
+$$
+若矩阵$A$的秩为$n-1$,求$a$.
+\begin{proof}[解]
+	$
+	A \xrightarrow[C_{3}+C_{1} \cdots C_{n}+C_{1}]{C_{2}+C_{1}} \left[
+	\begin{matrix}
+	1 + (n-1)a & a & a & \cdots & a\\
+	1 + (n-1)a & 1 & a & \cdots & a\\
+	1 + (n-1)a & a & 1 & \cdots & a\\
+	\vdots & \vdots & \vdots & \ddots & \vdots\\
+	1 + (n-1)a & a & a & \cdots & 1
+	\end{matrix}
+	\right] \\
+	\xrightarrow[R_{3}-R_{1} \cdots R_{n}-R_{1}]{R_{2}-R_{1}} \left[
+	\begin{matrix}
+	1 + (n-1)a & a & a & \cdots & a\\
+	0 & 1-a & 0 & \cdots & 0\\
+	0 & 0 & 1-a & \cdots & a\\
+	\vdots & \vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & 0 & \cdots & 1-a
+	\end{matrix}
+	\right]\\
+	$
+	$rank(A) = n-1$,所以$1+(n-1)a = 0, a = -\frac{1}{n-1}$
+\end{proof}
+\noindent 32.用初等行变换将下列矩阵化为阶梯型矩阵:\\
+(1)$\left[
+\begin{matrix}
+1 & 2 & 3 & 4\\
+0 & -1 & 0 & -2\\
+1 & 1 & 3 & 2\\
+2 & 2 & 6 & 4
+\end{matrix}
+\right]$;
+(2)$\left[
+\begin{matrix}
+1 & 0 & -1 & 5 & 12\\
+6 & 7 & 8 & 0 & -9\\
+26 & 21 & 26 & -10 & -51\\
+15 & 14 & 13 & -15 & -54
+\end{matrix}
+\right]$\\
+\noindent (1)
+\begin{proof}[解]
+	$
+	A \xrightarrow[R_{4}-2R_{1}]{R_{3}-R_{1}} \left[
+	\begin{matrix}
+	1 & 2 & 3 & 4\\
+	0 & -1 & 0 & -2\\
+	0 & -1 & 0 & -2\\
+	0 & -2 & 0 & -4
+	\end{matrix}
+	\right] \xrightarrow[R_{3}-R_{2}]{R_{4}-2R_{2}} \left[
+	\begin{matrix}
+	1 & 2 & 3 & 4\\
+	0 & -1 & 0 & -2\\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$\\
+\end{proof}
+\noindent (2)
+\begin{proof}[解]
+	$
+	B \xrightarrow[R_{3}-26R_{1}; R_{4}-15R_{1}]{R_{2}-6R_{1}} \left[
+	\begin{matrix}
+	1 & 0 & -1 & 5 & 12\\
+	0 & 7 & 14 & -30 & -81\\
+	0 & 21 & 52 & -140 & -363\\
+	0 & 14 & 28 & -90 & -234
+	\end{matrix}
+	\right] \xrightarrow[R_{4}-2R_{2}]{R_{3}-3R_{2}} \left[
+	\begin{matrix}
+	1 & 0 & -1 & 5 & 12\\
+	0 & 7 & 14 & -30 & -81\\
+	0 & 0 & 10 & -50 & -120\\
+	0 & 0 & 0 & -30 & -72
+	\end{matrix}
+	\right]
+	$
+\end{proof}
+\noindent 33.判断下列矩阵是否有相同的最简阶梯型：\\
+(1)
+$
+\left[
+\begin{matrix}
+1 & 2 & 3\\
+2 & 4 & 6\\
+0 & 1 & 2
+\end{matrix}
+\right], \left[
+\begin{matrix}
+1 & -1 & 5\\
+0 & 3 & 3\\
+0 & 2 & 2
+\end{matrix}
+\right];\\
+$
+(2)
+$\left[
+\begin{matrix}
+-1 & 0 & 4\\
+3 & 0 & -1\\
+0 & 1 & -1
+\end{matrix}
+\right], \left[
+\begin{matrix}
+1 & -1 & 5\\
+-1 & 4 & -2\\
+0 & 3 & 3
+\end{matrix}
+\right];\\
+$
+\noindent (1)
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & 2 & 3\\
+	2 & 4 & 6\\
+	0 & 1 & 2
+	\end{matrix}
+	\right] \xrightarrow{R_{2}-2R_{1}} \left[
+	\begin{matrix}
+	1 & 2 & 3\\
+	0 & 0 & 0\\
+	0 & 1 & 2
+	\end{matrix}
+	\right] \xrightarrow{R_{1} - 2R_{3}} \left[
+	\begin{matrix}
+	1 & 0 & -1\\
+	0 & 0 & 0\\
+	0 & 1 & 2
+	\end{matrix}
+	\right] \xrightarrow{R_{23}} \left[
+	\begin{matrix}
+	1 & 0 & -1\\
+	0 & 1 & 2\\
+	0 & 0 & 0
+	\end{matrix}
+	\right]\\
+	\\
+	\\
+	\left[
+	\begin{matrix}
+	1 & -1 & 5\\
+	0 & 3 & 3\\
+	0 & 2 & 2
+	\end{matrix}
+	\right] \xrightarrow[\frac{1}{3}R_2]{\frac{1}{2}R_{3}} \left[
+	\begin{matrix}
+	1 & -1 & 5\\
+	0 & 1 & 1\\
+	0 & 1 & 1
+	\end{matrix}
+	\right] \xrightarrow[R_{1}+R_{2}]{R_{3} - R_{2}} \left[
+	\begin{matrix}
+	1 & 0 & 6\\
+	0 & 1 & 1\\
+	0 & 0 & 0
+	\end{matrix}
+	\right]\\
+	$
+	所以，最简阶梯型不同。
+\end{proof}
+\noindent (2)
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	-1 & 0 & 4\\
+	3 & 0 & -1\\
+	0 & 1 & -1
+	\end{matrix}
+	\right] \xrightarrow{R_{2} + 3R_{1}} \left[
+	\begin{matrix}
+	-1 & 0 & 4\\
+	0 & 0 & 11\\
+	0 & 1 & -1
+	\end{matrix}
+	\right] \xrightarrow[R_{23}]{\frac{1}{11}R_{2}} \left[
+	\begin{matrix}
+	-1 & 0 & 4\\
+	0 & 1 & -1\\
+	0 & 0 & 1
+	\end{matrix}
+	\right] \xrightarrow[-R_{1}]{R_{1}-4R_{3}; R_{2}+R_{3}} \left[
+	\begin{matrix}
+	1 & 0 & 0\\
+	0 & 1 & 0\\
+	0 & 0 & 1
+	\end{matrix}
+	\right]\\
+	\left[
+	\begin{matrix}
+	1 & -1 & 5\\
+	-1 & 4 & -2\\
+	0 & 3 & 3
+	\end{matrix}
+	\right] \xrightarrow{R_{2}+R_{1}} \left[
+	\begin{matrix}
+	1 & -1 & 5\\
+	0 & 3 & 3\\
+	0 & 3 & 3
+	\end{matrix}
+	\right]
+	\xrightarrow[\frac{1}{3}R_{2}]{R_{2}-R_{3}} \left[
+	\begin{matrix}
+	1 & -1 & 5\\
+	0 & 1 & 1\\
+	0 & 0 & 0
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+R_{2}} \left[
+	\begin{matrix}
+	1 & 0 & 6\\
+	0 & 1 & 1\\
+	0 & 0 & 0
+	\end{matrix}
+	\right]
+	$
+	所以，最简阶梯型不同。
+\end{proof}
+\noindent (思考题)证明$\sum\limits_{i=1}^{m}\sum\limits_{k=1}^{n}a_{ik}b_{ki} = \sum\limits_{k=1}^{n}\sum\limits_{i=1}^{m}b_{ki}a_{ik}$\\
+\begin{proof}[证]
+	$\sum\limits_{i=1}^{m}\sum\limits_{k=1}^{n}a_{ik}b_{ki} = \sum\limits_{i=1}^{m}(a_{i1}b_{1i} + a_{i2}b_{2i}+ \cdots + a_{in}b_{ni})\\
+	= \sum\limits_{i=1}^{m}a_{i1}b_{1i} + \sum\limits_{i=1}^{m}a_{i2}b_{2i}+ \cdots + \sum\limits_{i=1}^{m}a_{in}b_{ni} = \sum\limits_{k=1}^{n}\sum\limits_{i=1}^{m}a_{ik}b_{ki} = \sum\limits_{k=1}^{n}\sum\limits_{i=1}^{m}b_{ki}a_{ik}$
+\end{proof}
+\noindent (思考题)证明：\\
+\noindent (1) $(AB)C = A(BC)$
+\begin{proof}[证]
+	假设$A = (a_{ij})_{m \times k}$, $B = (b_{ij})_{k \times l}$, $C = (c_{ij})_{l \times n}$\\
+	则$AB$的第$i$行第$j$列元素为：$\sum\limits_{h=1}^{k}a_{ih}b_{hj}$,即$AB=(\sum\limits_{h=1}^{k}a_{ih}b_{hj})_{m \times l}$\\
+	我们有$AB$的第$i$行元素为：$(\sum\limits_{h=1}^{k}a_{ih}b_{h1}, \sum\limits_{h=1}^{k}a_{ih}b_{h2}, \cdots ,\sum\limits_{h=1}^{k}a_{ih}b_{hl})$\\
+	所以，$(AB)C$的$i$行$j$列元素为$c_{1j}\sum\limits_{h=1}^{k}a_{ih}b_{h1} + c_{2j}\sum\limits_{h=1}^{k}a_{ih}b_{h2} + \cdots + c_{lj}\sum\limits_{h=1}^{k}a_{ih}b_{hl}$\\
+	$= \sum\limits_{g=1}^{l}c_{gj}\sum\limits_{h=1}^{k}a_{ih}b_{hg} = \sum\limits_{g=1}^{l}\sum\limits_{h=1}^{k}a_{ih}b_{hg}c_{gj}$,即$(AB)C = (\sum\limits_{g=1}^{l}\sum\limits_{h=1}^{k}a_{ih}b_{hg}c_{gj})_{m \times n}$\\
+	下面我们求$A(BC)$：\\
+	首先我们求得$BC = (\sum\limits_{g=1}^{l}b_{ig}c_{gj})_{k \times n}$\\
+	则$BC$的$j$列元素为：$(\sum\limits_{g=1}^{l}b_{1g}c_{gj}, \sum\limits_{g=1}^{l}b_{2g}c_{gj}, \cdots \sum\limits_{g=1}^{l}b_{kg}c_{gj})$\\
+	所以$A(BC)$的$i$行$j$列元素为$a_{i1}\sum\limits_{g=1}^{l}b_{1g}c_{gj}+a_{i2}\sum\limits_{g=1}^{l}b_{2g}c_{gj}+a_{ik}\sum\limits_{g=1}^{l}b_{kg}c_{gj}$\\
+	$= \sum\limits_{h=1}^{k}a_{ih}\sum\limits_{g=1}^{l}b_{hg}c_{gj} =  \sum\limits_{h=1}^{k}\sum\limits_{g=1}^{l}a_{ih}b_{hg}c_{gj}$, 即$A(BC) = (\sum\limits_{h=1}^{k}\sum\limits_{g=1}^{l}a_{ih}b_{hg}c_{gj})_{m \times n}$\\
+	而$\sum\limits_{g=1}^{l}\sum\limits_{h=1}^{k}a_{ih}b_{hg}c_{gj} = \sum\limits_{h=1}^{k}\sum\limits_{g=1}^{l}a_{ih}b_{hg}c_{gj}$\\
+	所以$(AB)C = A(BC)$
+\end{proof}
+\noindent (2) $C(A+B) = CA+CB$
+\begin{proof}[证]
+	假设$C = (c_{ij})_{m \times k}, A = (a_{ij})_{k \times n}, B = (b_{ij})_{k \times n}$\\
+	则$A+B = (a_{ij} + b_{ij})_{k \times n}$\\
+	$C(A+B)$的$i$行$j$列元素为$c_{i1}(a_{1j}+b_{1j})+c_{i2}(a_{2j}+b_{2j})+ \cdots + c_{ik}(a_{kj}+b_{kj})$\\
+	$= \sum\limits_{h=1}^{k}c_{ih}(a_{hj}+b_{hj})$,即$C(A+B) = (\sum\limits_{h=1}^{k}c_{ih}(a_{hj}+b_{hj}))_{m \times n}$\\
+	$CA = (\sum\limits_{h=1}^{k}c_{ih}a_{hj})_{m \times n}$, $CB = (\sum\limits_{h=1}^{k}c_{ih}b_{hj})_{m \times n}$\\
+	$CA+CB=(\sum\limits_{h=1}^{k}c_{ih}a_{hj})_{m \times n}+(\sum\limits_{h=1}^{k}c_{ih}b_{hj})_{m \times n} = (\sum\limits_{h=1}^{k}c_{ih}a_{hj}+\sum\limits_{h=1}^{k}c_{ih}b_{hj})_{m \times n}$\\
+	$= (\sum\limits_{h=1}^{k}c_{ih}a_{hj}+c_{ih}b_{hj})_{m \times n} = (\sum\limits_{h=1}^{k}c_{ih}(a_{hj}+b_{hj}))_{m \times n}$\\
+	所以$C(A+B) = CA+CB$
+\end{proof}
+\noindent (3) $(A+B)C = AC+BC$
+\begin{proof}[证]
+	同上，略
+\end{proof}
+\noindent (4) $k(AB) = (kA)B = A(kB)$
+\begin{proof}[证]
+	假设$A = (a_{ij})_{m \times l}$, $B = (b_{ij})_{l \times n}$\\
+	$AB = (\sum\limits_{h=1}^{l}a_{ih}b_{hj})_{m \times n}$\\
+	$k(AB) = k(\sum\limits_{h=1}^{l}a_{ih}b_{hj})_{m \times n} = (k\sum\limits_{h=1}^{l}a_{ih}b_{hj})_{m \times n} = (\sum\limits_{h=1}^{l}ka_{ih}b_{hj})_{m \times n}$\\
+	$kA = (ka_{ij})_{m \times l}, kB = (kb_{ij})_{l \times n}$\\
+	$(kA)B = (\sum\limits_{h=1}^{l}(ka_{ih})b_{hj})_{m \times n} = (\sum\limits_{h=1}^{l}ka_{ih}b_{hj})_{m \times n}$\\
+	$A(kB) = (\sum\limits_{h=1}^{l}a_{ih}(kb_{hj}))_{m \times n} = (\sum\limits_{h=1}^{l}ka_{ih}b_{hj})_{m \times n}$\\
+	所以$k(AB) = (kA)B = A(kB)$
+\end{proof}
+\end{document}
+

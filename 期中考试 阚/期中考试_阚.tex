@@ -1,0 +1,518 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{xeCJK}
+\usepackage{extarrows}
+
+\def\*#1{\mathbf{#1}}
+\def\rand{\xleftarrow{\$}}
+
+\title{}
+\author{}
+\date{}
+\begin{document}
+
+\chapter*{期中考试答案}
+\noindent 一.\\
+\noindent 1.\\
+\begin{proof}[解]
+	将行列式按第一列展开：\\
+	$B_{n} = 
+	\left|
+	\begin{matrix}
+	a+b & ab & 0 & \cdots & 0 & 0 & 0 & 0\\
+	1 & a+b & ab & \cdots & 0 & 0 & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \vdots \\
+	0 & 0 & 0 & \cdots & 1 & a+b & ab & 0 \\
+	0 & 0 & 0 & \cdots & 0 & 1 & a+b & ab\\
+	0 & 0 & 0 & \cdots & 0 & 0 & 1 & a+b
+	\end{matrix}
+	\right|\\
+	(a+b)
+	\left|
+	\begin{matrix}
+	a+b & ab & \cdots & 0 & 0 & 0 & 0\\
+	\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \vdots \\
+	0 & 0 & \cdots & 1 & a+b & ab & 0 \\
+	0 & 0 & \cdots & 0 & 1 & a+b & ab\\
+	0 & 0 & \cdots & 0 & 0 & 1 & a+b
+	\end{matrix}
+	\right|\\
+	+(-1)^{1+2}
+	\left|
+	\begin{matrix}
+	ab & 0 & \cdots & 0 & 0 & 0 & 0\\
+	\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \vdots \\
+	0 & 0 & \cdots & 1 & a+b & ab & 0 \\
+	0 & 0 & \cdots & 0 & 1 & a+b & ab\\
+	0 & 0 & \cdots & 0 & 0 & 1 & a+b
+	\end{matrix}
+	\right|\\
+	=(a+b)B_{n-1}-abB_{n-2}$\\
+	我们可以得到:\\
+	$B_{n}-bB_{n-1} = aB_{n-1}-abB_{n-2} = a(B_{n-1}-bB_{n-2})$\\
+	$B_{1} = a+b$,
+	$B_{2} = \left|
+	\begin{matrix}
+	a+b & ab\\
+	1 & a+b 
+	\end{matrix}
+	\right| = a^{2}+ab+b^{2}$\\
+	$B_{2}-bB_{1} = a^{2}+ab+b^{2}-ab-b^{2}=a^{2}$\\
+	所以$B_{n}-bB_{n-1} = a^{n-2}a^{2} = a^{n}$\\
+	同理可得$B_{n}-aB_{n-1} = b^{n-2}b^{2} = b^{n}$\\
+	当$a \neq b$时：\\
+	得到$aB_{n}-bB_{n} = a^{n+1}-b^{n+1}$\\
+	即$B_{n} = \frac{a^{n+1}-b^{n+1}}{a-b}$\\
+	当$a = b$时：\\
+	得到$B_{n}-aB_{n-1} = a^{n}$
+	即$\frac{B_{n}}{a^{n}} - \frac{B_{n-1}}{a^{n-1}} = 1$\\
+	又$\frac{B_{1}}{a} = 2$, 所以$\frac{B_{n}}{a^{n}} = n+1$, 即$B_{n} = (n+1)a^{n}$.
+\end{proof}
+\noindent 2.\\
+\begin{proof}[解]
+	1.没有$x_{i} = 0$\\
+	$A_{n} = 
+	\left|
+	\begin{matrix}
+	x_{1} & a & \cdots & a\\
+	a & x_{2} & \cdots & a\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a & a & \cdots & x_{n}
+	\end{matrix}
+	\right| \xlongequal {R_{2}-R_{1},...,R_{n}-R_{1}}
+	\left|
+	\begin{matrix}
+	x_{1} & a & \cdots & a\\
+	a-x_{1} & x_{2}-a & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a-x_{1} & 0 & \cdots & x_{n}-a
+	\end{matrix}
+	\right|\\
+	\xlongequal {C_{1}+\frac{x_{1}-a}{x_{2}-a}C_{2},...,C_{1}+\frac{x_{1}-a}{x_{n}-a}C_{n}}
+	\left|
+	\begin{matrix}
+	x_{1}+\frac{x_{1}-a}{x_{2}-a}a+...+\frac{x_{1}-a}{x_{n}-a}a & a & \cdots & a\\
+	a-x_{1} & x_{2}-a & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a-x_{1} & 0 & \cdots & x_{n}-a
+	\end{matrix}
+	\right|\\
+	= (x_{1}+\frac{x_{1}-a}{x_{2}-a}a+...+\frac{x_{1}-a}{x_{n}-a}a)(x_{2}-a)(x_{3}-a)...(x_{n}-a)
+	$\\
+	2.存在一个$x_{i} = 0$, 其他不为$0$.\\
+	$A_{n} = \left|
+	\begin{matrix}
+	x_{1} & a & \cdots & a\\
+	a & x_{2} & \cdots & a\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a & a & \cdots & a \\
+	\vdots & \vdots & \ddots & \vdots\\
+	a & a & \cdots & x_{n}
+	\end{matrix}
+	\right| \xlongequal {R_{1}-R_{i},...,R_{n}-R_{i}}
+	\left|
+	\begin{matrix}
+	x_{1}-a & 0 & \cdots & 0\\
+	0 & x_{2}-a & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a & a & \cdots & a \\
+	\vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & \cdots & x_{n}-a
+	\end{matrix}
+	\right|\\
+	\xlongequal {R_{i}-\frac{a}{x_{1}-a}R_{1},...,R_{i}-\frac{a}{x_{n}-a}R_{n}}
+	\left|
+	\begin{matrix}
+	x_{1}-a & 0 & \cdots & 0 & \cdots & 0\\
+	0 & x_{2}-a & \cdots & 0 & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots & \ddots & \vdots\\
+	0 & 0 & \cdots & a & \cdots & 0 \\
+	\vdots & \vdots & \ddots & \vdots& \ddots & \vdots\\
+	0 & 0 & \cdots & 0 & \cdots & x_{n}-a
+	\end{matrix}
+	\right|\\
+	=(x_{1}-a)(x_{2}-a)...(x_{i-1}-a)a(x_{i+1}-a)...(x_{n}-a)
+	$\\
+	2.存在两个以上$x_{i} = 0$.\\
+	则$A_{n} = 0$\\
+\end{proof}
+\noindent 二.\\
+\begin{proof}[解]
+	(1)\\
+	$AA^{*}=|A|E\\
+	\Rightarrow |AA^{*}|=||A|E|=|A|^{n}\\
+	\Rightarrow |A||A^{*}| = |A|^{n}\\
+	\Rightarrow |A^{*}| = |A|^{n-1} = 3^{n-1}$\\
+	(2)\\
+	$AA^{*}=|A|E$\\
+	若A可逆，则$A^{*}=|A|A^{-1}$\\
+	所以，$|(\frac{1}{4}A)^{-1}-2A^{*}|\\
+	=|4A^{-1} - 2A^{*}|\\
+	=|4A^{-1} - 2|A|A^{-1}|\\
+	=|(4-2|A|)A^{-1}|\\
+	=|(-2)A^{-1}|\\
+	=(-2)^{n}|A|^{-1}\\
+	=\frac{(-2)^{n}}{3}
+	$
+\end{proof}
+\noindent 三.\\
+\begin{proof}[解]
+	$[\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}] = \left[
+	\begin{matrix}
+	1 & 4 & 2 & 1\\
+	2 & 3 & -1 & -3\\
+	-1 & 0 & 2 & 3\\
+	1 & -2 & -4 & -5\\
+	1 & 5 & 3 & 2
+	\end{matrix}
+	\right]\\
+	\xrightarrow{R_{2}-2R_{1},R_{3}+R_{1},R_{4}-R_{1},R_{5}-R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 4 & 2 & 1\\
+	0 & -5 & -5 & -5\\
+	0 & 4 & 4 & 4\\
+	0 & -6 & -6 & -6\\
+	0 & 1 & 1 & 1
+	\end{matrix}
+	\right] \xrightarrow{} \left[
+	\begin{matrix}
+	1 & 4 & 2 & 1\\
+	0 & 1 & 1 & 1\\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]$\\
+	所以，向量组的秩为2，极大线性无关组可以为$\alpha_{1},\alpha_{2}$.\\
+\end{proof}
+\noindent 四.\\
+\begin{proof}[解]
+	$[A|b] = \left[
+	\begin{matrix}
+	2 & 1 & -1 & -1 & 1 & 4\\
+	1 & -1 & 1 & 1 & -2 & 1\\
+	3 & 3 & -3 & -3 & 4 & 7\\
+	4 & 5 & -5 & -5 & 7 & 10
+	\end{matrix}
+	\right] \xrightarrow{R_{1}-2R_{2}, R_{3}-3R_{2}, R_{4}-4R_{2}}
+	\left[
+	\begin{matrix}
+	0 & 3 & -3 & -3 & 5 & 2\\
+	1 & -1 & 1 & 1 & -2 & 1\\
+	0 & 6 & -6 & -6 & 10 & 4\\
+	0 & 9 & -9 & -9 & 15 & 6
+	\end{matrix}
+	\right]\\
+	\xrightarrow{} \left[
+	\begin{matrix}
+	1 & -1 & 1 & 1 & -2 & 1\\
+	0 & 3 & -3 & -3 & 5 & 2\\
+	0 & 0 & 0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right] \xrightarrow{3R_{1}+R_{2}}
+	\left[
+	\begin{matrix}
+	3 & 0 & 0 & 0 & -1 & 5\\
+	0 & 3 & -3 & -3 & 5 & 2\\
+	0 & 0 & 0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]$\\
+	我们可以得到对应的齐次方程的基础解系为\\
+	$\left[
+	\begin{matrix}
+	0\\
+	1\\
+	1\\
+	0\\
+	0
+	\end{matrix}
+	\right], \left[
+	\begin{matrix}
+	0\\
+	1\\
+	0\\
+	1\\
+	0
+	\end{matrix}
+	\right], \left[
+	\begin{matrix}
+	1/3\\
+	-5/3\\
+	0\\
+	0\\
+	1
+	\end{matrix}
+	\right]$\\
+	非齐次方程特解为\\
+	$
+	\left[
+	\begin{matrix}
+	5/3\\
+	2/3\\
+	0\\
+	0\\
+	0
+	\end{matrix}
+	\right]
+	$\\
+	所以通解为\\
+	$\left[
+	\begin{matrix}
+	5/3\\
+	2/3\\
+	0\\
+	0\\
+	0
+	\end{matrix}
+	\right]+k_{1}\left[
+	\begin{matrix}
+	0\\
+	1\\
+	1\\
+	0\\
+	0
+	\end{matrix}
+	\right]+k_{2} \left[
+	\begin{matrix}
+	0\\
+	1\\
+	0\\
+	1\\
+	0
+	\end{matrix}
+	\right]+k_{3} \left[
+	\begin{matrix}
+	1/3\\
+	-5/3\\
+	0\\
+	0\\
+	1
+	\end{matrix}
+	\right](k_{1},k_{2},k_{3}$可取任意实数)
+\end{proof}
+\noindent 五.\\
+\begin{proof}[证]
+	(1)$\alpha_{1},...,\alpha_{s}$可由$\beta_{1},...,\beta_{t}$线性表示.\\
+	则令\\
+	$\alpha_{1} = k_{11}\beta_{1}+k_{21}\beta_{2}+...+k_{t1}\beta_{t}$\\
+	\vdots\\
+	$\alpha_{s} = k_{1s}\beta_{1}+k_{2s}\beta_{2}+...+k_{ts}\beta_{t}$\\
+	用矩阵可表示为$[\alpha_{1},...,\alpha_{s}] = [\beta_{1},...,\beta_{t}]\left[
+	\begin{matrix}
+	k_{11} & \cdots & k_{1s}\\
+	k_{21} & \cdots & k_{2s}\\
+	\vdots & \ddots & \vdots\\
+	k_{t1} & \cdots & k_{ts}
+	\end{matrix}
+	\right] = [\beta_{1},...,\beta_{t}]A$\\
+	要证$\alpha_{1},...,\alpha_{s}$线性相关，只要证$[\alpha_{1},...,\alpha_{s}]X=0$有非零解，只要证$[\beta_{1},...,\beta_{t}]AX = 0$有非零解.\\
+	注意到$r(A) \leq min\{t, s\} = t < s$,所以$AX=0$有非零解，则$[\beta_{1},...,\beta_{t}]AX = 0$也有非零解，结论得证.\\
+	(2) $\alpha_{1},...,\alpha_{s}$线性相关\\
+	则存在不全为0的数$k_{1},...,k_{s}$,使得\\
+	$$k_{1}\alpha_{1}+...+k_{s}\alpha_{s}=0$$\\
+	乘上$A$得到\\
+	$$A(k_{1}\alpha_{1}+...+k_{s}\alpha_{s}=0)=0$$
+	$$\Rightarrow{} k_{1}A\alpha_{1}+...+k_{s}A\alpha_{s}=0$$
+	所以，$A\alpha_{1},...,A\alpha_{s}$线性相关.\\
+\end{proof}
+\noindent 六.
+\begin{proof}[证]
+	(1)首先我们有$r(A)+r(B) = r(\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right])$\\
+	$\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+R_{2}} \left[
+	\begin{matrix}
+	A & B\\
+	O & B
+	\end{matrix}
+	\right] \xrightarrow{C_{1}+C_{2}}
+	\left[
+	\begin{matrix}
+	A+B & B\\
+	O & B
+	\end{matrix}
+	\right]$\\
+	所以，$r(A)+r(B) = r(\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right]) = r(\left[
+	\begin{matrix}
+	A+B & B\\
+	O & B
+	\end{matrix}
+	\right]) \geq r(A+B)$
+	相减同理可得。\\
+	(2)$r(\left[
+	\begin{matrix}
+	A & B\\
+	O & B
+	\end{matrix}
+	\right]) = r(\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right]) = r(A)+r(B)$\\
+	(3)$\left[
+	\begin{matrix}
+	A & C\\
+	O & B
+	\end{matrix}
+	\right] \xrightarrow{C_{2}-A^{-1}CC_{1}}
+	\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right]$\\
+	所以，$r(\left[
+	\begin{matrix}
+	A & C\\
+	O & B
+	\end{matrix}
+	\right]) = r(\left[
+	\begin{matrix}
+	A & O\\
+	O & B
+	\end{matrix}
+	\right]) = r(A)+r(B)$
+\end{proof}
+\noindent 七.
+\begin{proof}[证]
+	(1)$r(A)=r$,则存在初等矩阵$P, Q$, 使得$A = P\left[
+	\begin{matrix}
+	E_{r} & O\\
+	O & O
+	\end{matrix}
+	\right]Q$\\
+	而$E_{r} = E_{11}+E_{22}+...+E_{rr}$($E_{ii}$为$i$行$i$列元素为$1$，其他元素都是$0$的$r$阶矩阵)\\
+	所以，$A=P\left[
+	\begin{matrix}
+	E_{r} & O\\
+	O & O
+	\end{matrix}
+	\right]Q = P(\left[
+	\begin{matrix}
+	E_{11} & O\\
+	O & O
+	\end{matrix}
+	\right] + ...+ \left[
+	\begin{matrix}
+	E_{rr} & O\\
+	O & O
+	\end{matrix}
+	\right])Q\\
+	=P\left[
+	\begin{matrix}
+	E_{11} & O\\
+	O & O
+	\end{matrix}
+	\right]Q + ...+ P\left[
+	\begin{matrix}
+	E_{rr} & O\\
+	O & O
+	\end{matrix}
+	\right]Q$\\
+	注意到每个$P\left[
+	\begin{matrix}
+	E_{ii} & O\\
+	O & O
+	\end{matrix}
+	\right]Q$的秩都是$1$,所以$A$能写成$r$个秩为1的矩阵之和.
+	(2)$r(A)=n$,则存在初等矩阵$P, Q$, 使得$A = P\left[
+	\begin{matrix}
+	E_{n}\\
+	O
+	\end{matrix}
+	\right]Q$\\
+	注意到初等矩阵都可逆，所以我们可以取秩为$n$的矩阵$B = Q^{-1}[E_{n}, O]P^{-1}$\\
+	$BA = Q^{-1}[E_{n}, O]P^{-1}P\left[
+	\begin{matrix}
+	E_{n}\\
+	O
+	\end{matrix}
+	\right]Q = E_{n}$\\
+	所以这样的$B$存在.
+\end{proof}
+\noindent 八.
+\begin{proof}[证]
+	令$k_{1}(e_{1}+e_{2})+k_{2}(e_{2}+e_{3})+...+k_{n}(e_{n}+e_{1})=0$\\
+	如果$k_{1},...,k_{n}$只能为0，则线性无关，反之，线性相关.\\
+	$k_{1}(e_{1}+e_{2})+k_{2}(e_{2}+e_{3})+...+k_{n}(e_{n}+e_{1})\\
+	=(k_{1}+k_{n})e_{1}+(k_{1}+k_{2})e_{2}+...+(k_{n-1}+k_{n})e_{n} = 0 $\\
+	而又$e_{1},...,e_{n}$线性无关，所以我们可得到方程组：
+	$$
+	\left\{
+	\begin{aligned}
+	k_{1}+k_{n} = 0 \\
+	k_{1}+k_{2} = 0 \\
+	\vdots \\
+	k_{n-1}+k_{n} = 0
+	\end{aligned}
+	\right.
+	$$
+	系数矩阵为\\
+	$
+	A=\left[
+	\begin{matrix}
+	1 & 0 & 0 & \cdots & 0 & 1\\
+	1 & 1 & 0 & \cdots & 0 & 0\\
+	0 & 1 & 1 & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots &\vdots\\
+	0 & 0 & 0 & \cdots & 1 & 0\\
+	0 & 0 & 0 & \cdots & 1 & 1
+	\end{matrix}
+	\right]
+	$\\
+	$A$的行列式为\\
+	$|A| = \left|
+	\begin{matrix}
+	1 & 0 & 0 & \cdots & 0 & 1\\
+	1 & 1 & 0 & \cdots & 0 & 0\\
+	0 & 1 & 1 & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots &\vdots\\
+	0 & 0 & 0 & \cdots & 1 & 0\\
+	0 & 0 & 0 & \cdots & 1 & 1
+	\end{matrix}
+	\right| = (-1)^{1+1}\left|
+	\begin{matrix}
+	1 & 0 & \cdots & 0 & 0\\
+	1 & 1 & \cdots & 0 & 0\\
+	\vdots & \vdots & \ddots & \vdots &\vdots\\
+	0 & 0 & \cdots & 1 & 0\\
+	0 & 0 & \cdots & 1 & 1
+	\end{matrix}
+	\right| + (-1)^{1+n}\left|
+	\begin{matrix}
+	1 & 1 & 0 & \cdots & 0\\
+	0 & 1 & 1 & \cdots & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & 0 & \cdots & 1\\
+	0 & 0 & 0 & \cdots & 1
+	\end{matrix}
+	\right|\\
+	=1+(-1)^{1+n}$\\
+	1.若$n$为偶数，则$1+(-1)^{1+n} = 0$,所以$AX=0$有非零解，所以$e_{1}+e_{2}, e_{2}+e_{3},...,e_{n}+e_{1}$线性相关.\\
+	2.若$n$为奇数，则$1+(-1)^{1+n} = 2 \neq 0$,所以$AX=0$有只有零解，所以$e_{1}+e_{2}, e_{2}+e_{3},...,e_{n}+e_{1}$线性无关.\\
+\end{proof}
+\end{document}

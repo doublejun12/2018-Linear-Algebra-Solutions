@@ -1,0 +1,2050 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{xeCJK}
+
+\def\*#1{\mathbf{#1}}
+\def\rand{\xleftarrow{\$}}
+
+\title{}
+\author{}
+\date{}
+\begin{document}
+
+\chapter*{第二章：线性方程组}
+\noindent 2.解下列线性方程组：\\
+\noindent (1)
+$$
+\left\{
+\begin{aligned}
+x_{1}-2x_{2}+3x_{3}-4x_{4}=0 \\
+x_{2}-x_{3}+x_{4}=0 \\
+x_{1}+3x_{2}-3x_{4}=0 \\
+x_{1}-4x_{2}+3x_{3}-2x_{4}=0
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4\\
+	0 & 1 & -1 & 1\\
+	1 & 3 & 0 & -3 \\
+	1 & -4 & 3 & -2
+	\end{matrix}
+	\right] \xrightarrow[R_{4}-R_{1};\frac{1}{2}R_{4}]{R_{3} -R_{1}} \left[
+	\begin{matrix}
+	1 & -2 & 3 & -4\\
+	0 & 1 & -1 & 1\\
+	0 & 5 & -3 & 1\\
+	0 & -1 & 0 & 1
+	\end{matrix}
+	\right] \xrightarrow[R_{4}+R_{2}]{R_{3}-5R_{2}} \\
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4\\
+	0 & 1 & -1 & 1\\
+	0 & 0 & 1 & -2\\
+	0 & 0 & -1 & 2
+	\end{matrix}
+	\right] \xrightarrow[R_{2}+R_{3}]{R_{4}+R_{3}} \left[
+	\begin{matrix}
+	1 & -2 & 3 & -4\\
+	0 & 1 & 0 & -1\\
+	0 & 0 & 1 & -2\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+2R_{2}-3R_{3}} \left[
+	\begin{matrix}
+	1 & 0 & 0 & 0\\
+	0 & 1 & 0 & -1\\
+	0 & 0 & 1 & -2\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$
+	把$x_{1},x_{2},x_{3}$作为主元变量，$x_{4}$作为自由变量，解得
+	$$
+	\left\{
+	\begin{aligned}
+	x_{1} = & 0 \\
+	x_{2} = & t_{4} \\
+	x_{3} = & 2t_{4} \\
+	x_{4} = & t_{4}
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent (2)
+$$
+\left\{
+\begin{aligned}
+x_{1}+x_{2}+x_{3}+x_{4}+x_{5} = 0 \\
+3x_{1}+2x_{2}+x_{3}+x_{4}-3x_{5}=0 \\
+x_{2}+2x_{3}+2x_{4}+6x_{5}=0 \\
+5x_{1}+4x_{2}+3x_{3}+3x_{4}-x_{5}=0
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1 & 1\\
+	3 & 2 & 1 & 1 & -3\\
+	0 & 1 & 2 & 2 & 6 \\
+	5 & 4 & 3 & 3 & -1
+	\end{matrix}
+	\right] \xrightarrow[R_{4}-5R_{1}]{R_{2}-3R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1 & 1\\
+	0 & -1 & -2 & -2 & -6\\
+	0 & 1 & 2 & 2 & 6 \\
+	0 & -1 & -2 & -2 & -6
+	\end{matrix}
+	\right]\\ \xrightarrow[R_{3}+R_{2}]{R_{4}-R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1 & 1\\
+	0 & -1 & -2 & -2 & -6\\
+	0 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+R_{2};-R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 0 & -1 & -1 & -5\\
+	0 & 1 & 2 & 2 & 6\\
+	0 & 0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]\\
+	$
+	把$x_{1},x_{2}$作为主元变量，$x_{3},x_{4},x_{5}$作为自由变量，解得
+	$$
+	\left\{
+	\begin{aligned}
+	x_{1} = & t_{3}+t_{4}+5t_{5} \\
+	x_{2} = & -2t_{3}-2t_{4}-6t_{5} \\
+	x_{3} = & t_{3} \\
+	x_{4} = & t_{4} \\
+	x_{5} = & t_{5}
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent (3)
+$$
+\left\{
+\begin{aligned}
+x_{1}+2x_{2}+x_{3}-x_{4}=6\\
+2x_{1}-x_{2}+x_{3}+3x_{4}+4x_{5}=-7 \\
+2x_{1}-x_{2}+2x_{3}+x_{4}-2x_{5}=-4 \\
+2x_{1}-3x_{2}+x_{3}+2x_{4}-2x_{5}=-9 \\
+x_{1}+x_{3}-2x_{4}-6x_{5} = 4
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	1 & 2 & 1 & -1 & 0 & 6\\
+	2 & -1 & 1 & 3 & 4 & -7\\
+	2 & -1 & 2 & 1 & -2 & -4\\
+	2 & -3 & 1 & 2 & -2 & -9 \\
+	1 & 0 & 1 & -2 & -6 & 4
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{...}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & 0 & 0 & 1\\
+	0 & 1 & 0 & 0 & 20/11 & 2\\
+	0 & 0 & 1 & 0 & -14/11 & -1\\
+	0 & 0 & 0 & 1 & 26/11 & -2 \\
+	0 & 0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	把$x_{1},x_{2},x_{3},x_{4}$作为主元变量，$x_{5}$作为自由变量，解得
+	$$
+	\left\{
+	\begin{aligned}
+	x_{1} = & 1 \\
+	x_{2} = & 2-\frac{20}{11}t_{5} \\
+	x_{3} = & -1+\frac{14}{11}t_{5} \\
+	x_{4} = & -2-\frac{26}{11}t_{5} \\
+	x_{5} = & t_{5}
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent (4)
+$$
+\left\{
+\begin{aligned}
+2x_{1}-x_{2}-2x_{3}+x_{4}=0\\
+1x_{1}+2x_{2}+2x_{3}+x_{4}=6\\
+3x_{1}+x_{2}-x_{3}-2x_{4}=1\\
+x_{1}+2x_{2}+x_{3}-3x_{4}=2\\
+2x_{1}+4x_{2}+3x_{3}-2x_{4}=7
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	2 & -1 & -2 & 1 & 0\\
+	1 & 2 & 2 & 1 & 6\\
+	3 & 1 & -1 & -2 & 1\\
+	1 & 2 & 1 & -3 & 2\\
+	2 & 4 & 3 & -2 & 7
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{...}
+	\left[
+	\begin{matrix}
+	1 & 2 & 2 & 1 & 6\\
+	0 & -5 & -6 & -1 & -12\\
+	0 & 0 & -1 & -4 & -5\\
+    0 & 0 & 0 & 0 & 1\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	$r(A) < r(A|b)$，所以方程组无解.
+\end{proof}
+\noindent 4.讨论下列方程组，当$\lambda$取什么值时有唯一解？取什么值时有无穷多解？取什么值时无解？\\
+\noindent (1)
+$$
+\left\{
+\begin{aligned}
+(\lambda +3)x_{1}+x_{2}+2x_{3}=\lambda \\
+\lambda x_{1}+(\lambda -1)x_{2} + x_{3}=\lambda \\
+3(\lambda +1)x_{1}+\lambda x_{2}+(\lambda +3)x_{3} = 3
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	\lambda + 3 & 1 & 2 & \lambda \\
+	\lambda & \lambda - 1 & 1 & \lambda \\
+	3(\lambda + 1) & \lambda & \lambda + 3 & 3
+	\end{matrix}
+	\right] \xrightarrow[R_{3}-3R_{2}]{R_{1}-R_{2}} \left[
+	\begin{matrix}
+	3 & 2-\lambda & 1 & 0 \\
+	\lambda & \lambda - 1 & 1 & \lambda \\
+	3 & 3 - 2\lambda & \lambda & 3 - 3\lambda
+	\end{matrix}
+	\right]\\
+	\xrightarrow[R_{3}-R_{1}]{3R_{2}-\lambda R_{1}} \left[
+	\begin{matrix}
+	3 & 2-\lambda & 1 & 0 \\
+	0 & \lambda^{2} + \lambda -3 & 3-\lambda & 3\lambda \\
+	0 & 1 - \lambda & \lambda -1 & 3(1 - \lambda)
+	\end{matrix}
+	\right]
+	$
+	当$\lambda = 1$时，矩阵为\\
+	$$
+	\left[
+	\begin{matrix}
+	3 & 1 & 1 & 0 \\
+	0 & -1 & 2 & 3 \\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	此时，$r(A|b) = r(A) < 3$，所以有无穷多解.
+	当$\lambda \neq 1$时，继续初等行变换\\
+	$
+	\xrightarrow{R_{3}/(1-\lambda)}
+	\left[
+	\begin{matrix}
+	3 & 2-\lambda & 1 & 0 \\
+	0 & \lambda^{2} + \lambda -3 & 3-\lambda & 3\lambda \\
+	0 & 1 & -1 & 3
+	\end{matrix}
+	\right] \xrightarrow{R_{2} - (\lambda^{2} + \lambda -3)R_{3}}
+	\left[
+	\begin{matrix}
+	3 & 2-\lambda & 1 & 0 \\
+	0 & \lambda^{2} + \lambda -3 & 3-\lambda & 3\lambda \\
+	0 & 1 & -1 & 3
+	\end{matrix}
+	\right]\\
+	\xrightarrow{R_{23}}
+	\left[
+	\begin{matrix}
+	3 & 2-\lambda & 1 & 0 \\
+	0 & 1 & -1 & 3 \\
+	0 & 0 & \lambda^{2} & 9-3{\lambda}^{2} 
+	\end{matrix}
+	\right]\\
+	$
+	当$r(A|b) > r(A)$时，无解，此时$\lambda = 0$.\\
+	所以，当$\lambda \neq 1 $ 且 $ \lambda \neq 0$时，$r(A) = r(A|b) = 3$, 此时有唯一解.
+\end{proof}
+\noindent (2)
+$$
+\left\{
+\begin{aligned}
+x_{1}+2x_{2}+\lambda x_{3}=1 \\
+2x_{1}+\lambda x_{2} + 8x_{3}=\lambda 
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	1 & 2 & \lambda & 1 \\
+	2 & \lambda & 8 & \lambda 
+	\end{matrix}
+	\right] \xrightarrow{R_{2}-2R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 2 & \lambda & 1 \\
+	0 & \lambda - 4 & 8 - 2\lambda & \lambda -2
+	\end{matrix}
+	\right]
+	$$
+	1). 当$\lambda = 4$时,$r(A) < r(A|b)$ ,则无解.\\
+	2). 当$\lambda \neq 4$时, $r(A) = r(A|b) < 3$, 则有无穷多组解.
+\end{proof}
+\noindent (3)
+$$
+\left\{
+\begin{aligned}
+x_{1}+x_{2}+\lambda x_{3}=2 \\
+3x_{1}+4x_{2} + 2x_{3}=\lambda \\
+2x_{1}+3x_{2}-x_{3} = 3
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	1 & 1 & \lambda & 2 \\
+	3 & 4 & 2 & \lambda \\
+	2 & 3 & -1 & 3
+	\end{matrix}
+	\right] \xrightarrow[R_{3}-2R_{1}]{R_{2}-3R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 1 & \lambda & 2 \\
+	0 & 1 & 2-3\lambda & \lambda - 6 \\
+	0 & 1 & -1-2\lambda & -1
+	\end{matrix}
+	\right] \xrightarrow{R_{3}-R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 1 & \lambda & 2 \\
+	0 & 1 & 2-3\lambda & \lambda - 6 \\
+	0 & 0 & \lambda -3& 5-\lambda
+	\end{matrix}
+	\right]
+	$$
+	1). 当$\lambda = 3$时, $r(A) < r(A|b)$,则无解.\\
+	2). 当$\lambda \neq 3$时, $r(A) = r(A|b) = 3$, 有唯一解.
+\end{proof}
+\noindent 5.讨论$a,b$为何值时，线性方程组
+$$
+\left\{
+\begin{aligned}
+x_{1}-x_{2}+2x_{3}=1\\
+2x_{1}-x_{2}+3x_{3}-x_{4}=4\\
+x_{2}+ax_{3}+bx_{4}=b\\
+x_{1}-3x_{2}+(3-a)x_{3}=-4
+\end{aligned}
+\right.
+$$
+有解或无解，若有解，求出其解.
+\begin{proof}[解]
+	$$
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	2 & -1 & 3 & -1 & 4\\
+	0 & 1 & a & b & b\\
+	1 & -3 & 3-a & 0 & -4
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{4}-R_{1}]{R_{2}-2R_{1}}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 1 & a & b & b\\
+	0 & -2 & 1-a & 0 & -5
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{3}-R_{2}]{R_{4}+2R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & a+1 & b+1 & b-2\\
+	0 & 0 & -(1+a) & -2 & -1
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{4}+R_{3}}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & a+1 & b+1 & b-2\\
+	0 & 0 & 0 & b-1 & b-3
+	\end{matrix}
+	\right]
+	$$
+	1. 当$b=1$时，$r(A) < r(A|b)$，方程组无解.\\
+	2. 当$b \neq 1, a = -1$时，
+	$$
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & 0 & b+1 & b-2\\
+	0 & 0 & 0 & b-1 & b-3
+	\end{matrix}
+	\right]
+	$$
+	1)当$b=-1$时，$r(A) < r(A|b)$，方程组无解.\\
+	2)当$b \neq -1$时，
+	$$
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & 0 & b+1 & b-2\\
+	0 & 0 & 0 & b-1 & b-3
+	\end{matrix}
+	\right] 
+	$$
+	$$
+	\xrightarrow{R_{3}/(b+1)}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & 0 & 1 & (b-2)/(b+1)\\
+	0 & 0 & 0 & b-1 & b-3
+	\end{matrix}
+	\right]\\
+	$$
+	$$
+	\xrightarrow{R_{4}-(b-1)R_{3}}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & 0 & 1 & (b-2)/(b+1)\\
+	0 & 0 & 0 & 0 & (b-5)/(b+1)
+	\end{matrix}
+	\right]
+	$$
+	i)当$b=5$时
+	$$
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & -1 & 2\\
+	0 & 0 & 0 & 1 & 1/2\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{2}+R_{3}}
+	\left[
+	\begin{matrix}
+	1 & -1 & 2 & 0 & 1\\
+	0 & 1 & -1 & 0 & 5/2\\
+	0 & 0 & 0 & 1 & 1/2\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{1}+R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 0 & 1 & 0 & 7/2\\
+	0 & 1 & -1 & 0 & 5/2\\
+	0 & 0 & 0 & 1 & 1/2\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	所以，$x_{1},x_{2},x_{4}$为主元变量，$x_{3}$为自由变量，解得
+	$$
+	\left\{
+	\begin{aligned}
+	x_{1} = & 3.5-t_{3} \\
+	x_{2} = & 2.5+t_{3} \\
+	x_{3} =  & t_{3}\\
+	x_{4} = & 0.5
+	\end{aligned}
+	\right.
+	$$
+	ii)当$b \neq 5$时,$r(A) < r(A|b)$，方程组无解.\\
+	3.当$b \neq 1, a \neq -1$时，$r(A) = r(A|b) = 4$，所以有唯一解
+	$$
+	\left\{
+	\begin{aligned}
+	x_{1} = & \frac{4ab+5b-6a-11}{(b-1)(a+1)} \\
+	x_{2} = & \frac{3ab+2b-5a}{(b-1)(a+1)} \\
+	x_{3} =  & \frac{5-b}{(b-1)(a+1)}\\
+	x_{4} = & \frac{b-3}{b-1}
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent 7.已知平面上三条不同直线方程分别为
+$$
+l_{1}:ax+2by+3c=0
+$$
+$$
+l_{2}:bx+2cy+3a=0
+$$
+$$
+l_{3}:cx+2ay+3b=0
+$$
+试证这三条直线交于一点的充要条件是$a+b+c=0$.
+\begin{proof}[解]
+	考虑方程组
+	$$
+	\left\{
+	\begin{aligned}
+	ax+2by=-3c \\
+	bx+2cy=-3a \\
+	cx+2ay=-3b
+	\end{aligned}
+	\right.
+	$$
+	其增广矩阵为
+	$$
+	\left[
+	\begin{matrix}
+	a & 2b & -3c \\
+	b & 2c & -3a \\
+	c & 2a & -3b 
+	\end{matrix}
+	\right]
+	$$
+	三条直线交于一点,当且仅当方程组有唯一解,当且仅当$r(A)=r(A|b)=2$\\
+	$
+	\left[
+	\begin{matrix}
+	a & 2b & -3c \\
+	b & 2c & -3a \\
+	c & 2a & -3b 
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+R_{2}+R_{3}}
+	\left[
+	\begin{matrix}
+	a+b+c & 2(a+b+c) & -3(a+b+c) \\
+	b & 2c & -3a \\
+	c & 2a & -3b 
+	\end{matrix}
+	\right]
+	$\\
+	1. 当$a+b+c \neq 0$时, 继续做初等行变换
+	$$
+	\xrightarrow{R_{1}/(a+b+c)} 
+	\left[
+	\begin{matrix}
+	1 & 2 & -3 \\
+	b & 2c & -3a \\
+	c & 2a & -3b 
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{3}-cR_{1}]{R_{2}-bR_{1}}
+	\left[
+	\begin{matrix}
+	1 & 2 & -3 \\
+	0 & 2(c-b) & 3(b-a) \\
+	0 & 2(a-c) & 3(c-b)
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{(c-b)R_{3}-(a-c)R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 2 & -3 \\
+	0 & 2(c-b) & 3(b-a) \\
+	0 & 0 & 3((c-b)^{2}-(b-a)(a-c))
+	\end{matrix}
+	\right]
+	$$
+	注意$3((c-b)^{2}-(b-a)(a-c)) = 3(a^{2}+b^{2}+c^{2}-ab-bc-ac)\\
+	=\frac{3}{2}((a-b)^{2}+(b-c)^{2}+(c-a)^{2}) > 0$, 因为$a-b,b-c,c-a$不能同时为零,否则$a=b=c$,三条直线相同.\\
+	所以,我们有$r(A) < r(A|b)$,方程组无解.\\
+	2.当$a+b+c = 0$时,矩阵为
+	$$
+	\left[
+	\begin{matrix}
+	0 & 0 & 0 \\
+	b & 2c & -3a \\
+	c & 2a & -3b 
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{bR_{3}-cR_{2}}
+	\left[
+	\begin{matrix}
+	0 & 0 & 0 \\
+	b & 2c & -3a \\
+	0 & 2(ab-c^{2}) & -3(b^{2}-ac)
+	\end{matrix}
+	\right]
+	$$
+	注意到$ab-c^{2} = ab-(a+b)^{2} = -(a^{2}+ab+b^{2}) = -(a+\frac{1}{2}b)^{2}-\frac{3}{4}b^{2} < 0$, 因为$a,b$不能同时为0,否则$a,b,c$都为0.\\
+	所以,我们有$r(A) = r(A|b) = 2$,方程组有唯一解.\\
+	综上所述,方程组有唯一解的充要条件是$a+b+c = 0$.
+\end{proof}
+\noindent 16.设
+$$
+A=\left[
+\begin{matrix}
+1 & -1 & -1 \\
+-1 & 1 & 1 \\
+0 & -4 & -2
+\end{matrix}
+\right],\xi_{1} = \left[
+\begin{matrix}
+-1 \\
+1 \\
+-2
+\end{matrix}
+\right]
+$$
+(1)求满足$A\xi_{2}=\xi_{1},A^{2}\xi_{3}=\xi_{1}$的所有向量$\xi_{2},\xi_{3}$.\\
+(2)对(1)中的任意向量$\xi_{2},\xi_{3}$证明$\xi_{1},\xi_{2},\xi_{3}$线性无关.
+\begin{proof}[解]
+	(1)$[A|\xi_{1}] = \left[
+	\begin{matrix}
+	1 & -1 & -1 & -1\\
+	-1 & 1 & 1 & 1\\
+	0 & -4 & -2 & -2
+	\end{matrix}
+	\right] \xrightarrow[-R_{3}/4]{R_{2}+R_{1}} \left[
+	\begin{matrix}
+	1 & -1 & -1 & -1\\
+	0 & 0 & 0 & 0\\
+	0 & 1 & 1/2 & 1/2
+	\end{matrix}
+	\right] \xrightarrow[R_{23}]{R_{1}+R_{2}} \left[
+	\begin{matrix}
+	1 & 0 & -1/2 & -1/2\\
+	0 & 1 & 1/2 & 1/2\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$
+	所以,$\xi_{2} = \left[
+	\begin{matrix}
+	0 \\
+	0 \\
+	1
+	\end{matrix}
+	\right]+t\left[
+	\begin{matrix}
+	1 \\
+	-1 \\
+	2
+	\end{matrix}
+	\right]$($t$为任意实数)
+	$\\
+	A^{2}= \left[
+	\begin{matrix}
+	1 & -1 & -1\\
+	-1 & 1 & 1\\
+	0 & -4 & -2
+	\end{matrix}
+	\right] \left[
+	\begin{matrix}
+	1 & -1 & -1\\
+	-1 & 1 & 1\\
+	0 & -4 & -2
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	1 & -1 & -1\\
+	-1 & 1 & 1\\
+	0 & -4 & -2
+	\end{matrix}
+	\right] = \left[
+	\begin{matrix}
+	2 & 2 & 0\\
+	-2 & -2 & 0\\
+	4 & 4 & 0
+	\end{matrix}
+	\right]
+	$
+	$
+	[A^{2}|\xi_{1}]=\left[
+	\begin{matrix}
+	2 & 2 & 0 & -1\\
+	-2 & -2 & 0 & 1\\
+	4 & 4 & 0 & -2
+	\end{matrix}
+	\right] \xrightarrow[R_{4}-2R_{2}]{R_{3}+R_{1}} \left[
+	\begin{matrix}
+	2 & 2 & 0 & -1\\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0
+	\end{matrix}
+	\right]	
+	$
+	得到基础解系
+	$
+	\left[
+	\begin{matrix}
+	1 \\
+	-1 \\
+	0
+	\end{matrix}
+	\right], \left[
+	\begin{matrix}
+	0 \\
+	0 \\
+	1
+	\end{matrix}
+	\right]
+	$, 特解
+	$
+	\left[
+	\begin{matrix}
+	-1/2 \\
+	0 \\
+	0
+	\end{matrix}
+	\right]
+	$\\
+	所以$ \xi_{3} = \left[
+	\begin{matrix}
+	-1/2 \\
+	0 \\
+	0
+	\end{matrix}
+	\right] + t_{1}\left[
+	\begin{matrix}
+	1 \\
+	-1 \\
+	0
+	\end{matrix}
+	\right]+t_{2}\left[
+	\begin{matrix}
+	0 \\
+	0 \\
+	1
+	\end{matrix}
+	\right]
+	$($t_{1}, t_{2}$为任意实数)\\
+	\\
+	(2)假设$\xi_{1},\xi_{2},\xi_{3}$线性相关,则存在不全为0的数使得
+	$$k_{1}\xi_{1}+k_{2}\xi_{2}+k_{3}\xi_{3} = 0$$
+	$$k_{1}\left[
+	\begin{matrix}
+	-1 \\
+	1 \\
+	-2
+	\end{matrix}
+	\right]+k_{2}\left[
+	\begin{matrix}
+	t \\
+	-t \\
+	2t+1
+	\end{matrix}
+	\right]+k_{3}\left[
+	\begin{matrix}
+	t_{1}-1/2 \\
+	-t_{1} \\
+	t_{2}
+	\end{matrix}
+	\right] = 0$$
+	系数矩阵为
+	$$
+	\left[
+	\begin{matrix}
+	-1 & t & t_{1}-1/2 \\
+	1 & -t & -t_{1} \\
+	-2 & 2t+1 & t_{2}
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{3}-2R_{1}]{R_{2}+R_{1}}
+	\left[
+	\begin{matrix}
+	-1 & t & t_{1}-1/2 \\
+	0 & 0 & -1/2 \\
+	0 & 1 & t_{2}-2t_{1}+1
+	\end{matrix}
+	\right] \xrightarrow{R_{23}}
+	\left[
+	\begin{matrix}
+	-1 & t & t_{1}-1/2 \\
+	0 & 1 & t_{2}-2t_{1}+1\\
+	0 & 0 & -1/2 
+	\end{matrix}
+	\right]
+	$$
+	所以,$r(A) = 3$, 方程组只有零解,$k_{1},k_{2},k_{3}$全为0, $\xi_{1},\xi_{2},\xi_{3}$线性无关.
+\end{proof}
+\noindent 17.设向量组$\alpha_{1} = [1,0,1]^{T}, \alpha_{2} = [0,1,1]^{T}, \alpha_{3} = [1,3,5]^{T}$不能由向量组$\beta_{1}=[1,1,1]^{T},\beta_{2}=[1,2,3]^{T},\beta_{3}=[3,4,a]^{T}$线性表出.
+\begin{proof}[解]
+	因为向量组$\alpha_{1}, \alpha_{2}, \alpha_{3}$不能由$\beta_{1}, \beta_{2}, \beta_{3}$线性表出,所以$r(\beta_{1}, \beta_{2}, \beta_{3}) < r(\beta_{1}, \beta_{2}, \beta_{3}, \alpha_{1}, \alpha_{2}, \alpha_{3})$\\
+	$$
+	[\beta_{1}, \beta_{2}, \beta_{3}, \alpha_{1}, \alpha_{2}, \alpha_{3}] = \left[
+	\begin{matrix}
+	1 & 1 & 3 & 1 & 0 & 1\\
+	1 & 2 & 4 & 0 & 1 & 3\\
+	1 & 3 & a & 1 & 1 & 5
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{3}-R_{1}]{R_{2}-R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 3 & 1 & 0 & 1\\
+	0 & 1 & 1 & -1 & 1 & 2\\
+	0 & 2 & a-3 & 0 & 1 & 4
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{3}-2R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 3 & 1 & 0 & 1\\
+	0 & 1 & 1 & -1 & 1 & 2\\
+	0 & 0 & a-5 & 2 & -1 & 0
+	\end{matrix}
+	\right]
+	$$
+	所以当$a = 5$时,$r(\beta_{1}, \beta_{2}, \beta_{3}) < r(\beta_{1}, \beta_{2}, \beta_{3}, \alpha_{1}, \alpha_{2}, \alpha_{3})$
+	$$
+	[\alpha_{1}, \alpha_{2}, \alpha_{3}, \beta_{1}, \beta_{2}, \beta_{3}] = \left[
+	\begin{matrix}
+	1 & 0 & 1 & 1 & 1 & 3 \\
+	0 & 1 & 3 & 1 & 2 & 4 \\
+	1 & 1 & 5 & 1 & 3 & 5 &
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{3}-R_{1}} 
+	\left[
+	\begin{matrix}
+	1 & 0 & 1 & 1 & 1 & 3 \\
+	0 & 1 & 3 & 1 & 2 & 4 \\
+	0 & 1 & 4 & 0 & 2 & 2 &
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{R_{3}-R_{2}} 
+	\left[
+	\begin{matrix}
+	1 & 0 & 1 & 1 & 1 & 3 \\
+	0 & 1 & 3 & 1 & 2 & 4 \\
+	0 & 0 & 1 & -1 & 0 & -2 &
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow[R_{1}-R_{3}]{R_{2}-3R_{3}} 
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & 2 & 1 & 5 \\
+	0 & 1 & 0 & 4 & 2 & 10 \\
+	0 & 0 & 1 & -1 & 0 & -2 &
+	\end{matrix}
+	\right]
+	$$
+	所以,我们得到
+	$$
+	\left\{
+	\begin{aligned}
+	\beta_{1} = & 2\alpha_{1}+4\alpha_{2}-\alpha_{3} \\
+	\beta_{2} = & \alpha_{1}+2\alpha_{2} \\
+	\beta_{3} = & 5\alpha_{1}+10\alpha_{2}-2\alpha_{3} 
+	\end{aligned}
+	\right.
+	$$
+\end{proof}
+\noindent 18.设矩阵
+$$
+\left[
+\begin{matrix}
+1 & -2 & 3 & -4 \\
+0 & 1 & -1 & 1 \\
+1 & 2 & 0 & -3
+\end{matrix}
+\right]
+$$
+(1)求方程组$Ax=0$的一个基础解系;\\
+(2)求满足$AB=I$的所有矩阵$B$,其中$I$是3阶单位矩阵.
+\begin{proof}[解]
+	(1)
+	$
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 \\
+	0 & 1 & -1 & 1 \\
+	1 & 2 & 0 & -3
+	\end{matrix}
+	\right] \xrightarrow{R_{3}-R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 \\
+	0 & 1 & -1 & 1 \\
+	0 & 4 & -3 & 1
+	\end{matrix}
+	\right] \xrightarrow{R_{3}-4R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 \\
+	0 & 1 & -1 & 1 \\
+	0 & 0 & 1 & -3
+	\end{matrix}
+	\right] \xrightarrow{R_{2}+R_{3}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 \\
+	0 & 1 & 0 & -2  \\
+	0 & 0 & 1 & -3
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+2R_{2}-3R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & 1 \\
+	0 & 1 & 0 & -2  \\
+	0 & 0 & 1 & -3
+	\end{matrix}
+	\right]
+	$\\
+	所以,基础解系为$(-1,2,3,1)^{T}$.\\
+	(2)$A$为$3 \times 4$矩阵, $I$为3阶单位矩阵,所以$B$为 $4 \times 3$ 矩阵, 设$B$的列向量为$\alpha_{1}, \alpha_{2}, \alpha_{3}$. 即求$A(\alpha_{1}, \alpha_{2}, \alpha_{3}) = I$的所有解,即求$A\alpha_{1} =\left[
+	\begin{matrix}
+	1\\
+	0\\
+	0 
+	\end{matrix}
+	\right] , A\alpha_{2} = \left[
+	\begin{matrix}
+	0\\
+	1\\
+	0 
+	\end{matrix}
+	\right], A\alpha_{3} = \left[
+	\begin{matrix}
+	0\\
+	0\\
+	1 
+	\end{matrix}
+	\right]$的所有解.\\
+	$[A|I] = \left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 & 1 & 0 & 0\\
+	0 & 1 & -1 & 1 & 0 & 1 & 0\\
+	1 & 2 & 0 & -3 & 0 & 0 & 1
+	\end{matrix}
+	\right] \xrightarrow{R_{3}-R_{2}} 
+	 \left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 & 1 & 0 & 0\\
+	0 & 1 & -1 & 1 & 0 & 1 & 0\\
+	0 & 4 & -3 & 1 & -1 & 0 & 1
+	\end{matrix}
+	\right] \xrightarrow{R_{3}-4R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 & 1 & 0 & 0\\
+	0 & 1 & -1 & 1 & 0 & 1 & 0\\
+	0 & 0 & 1 & -3 & -1 & -4 & 1
+	\end{matrix}
+	\right] \xrightarrow{R_{2}+R_{3}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 3 & -4 & 1 & 0 & 0\\
+	0 & 1 & 0 & -2 & -1 & -3 & 1\\
+	0 & 0 & 1 & -3 & -1 & -4 & 1
+	\end{matrix}
+	\right] \xrightarrow{R_{1}+2R_{2}-3R_{3}}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & 1 & 2 & 6 & -1\\
+	0 & 1 & 0 & -2 & -1 & -3 & 1\\
+	0 & 0 & 1 & -3 & -1 & -4 & 1
+	\end{matrix}
+	\right]
+	$ \\
+	解得$\alpha_{1} = k_{1}(-1,2,3,1)^{T}+(2,-1,-1,0)^{T}, \alpha_{2} = k_{2}(-1,2,3,1)^{T}+(6,-3,-4,0)^{T}, \alpha_{3} = k_{3}(-1,2,3,1)^{T}+(-1,1,1,0)^{T}$\\
+	所以,把$\alpha_{1},\alpha_{2},\alpha_{3}$代入$B=(\alpha_{1},\alpha_{2},\alpha_{3})$,即得所有的$B$.
+\end{proof}
+\noindent 21.设$A$是$s \times n$矩阵, $B$是$n \times m$矩阵, $n < m$,证明:齐次线性方程组$(AB)x=0$有非零解.
+\begin{proof}[证]
+	$r(B) \leq min\{m, n\} = n < m$, 所以$Bx =0$,有非零解.不妨记为$x_{1}$.\\
+	所以$(AB)x_{1}=A(Bx_{1})=0$.\\
+	即$x_{1}$也是$(AB)x=0$的非零解.\\
+	所以,$(AB)x=0$有非零解.
+\end{proof}
+\noindent 22.设$A$是$m \times s$矩阵,$B$是$s \times n$矩阵,$x$是$n$元向量.证明:若$(AB)x=0$与$Bx=0$是同解方程组,则$rank(AB)=rank(A)$.
+\begin{proof}[证]
+	$(AB)x=0$与$Bx=0$是同解方程组,所以,两个方程组里基础解系中向量个数相等.\\
+	$AB$为$m \times n$的矩阵, $B$是$s \times n$矩阵.\\
+	所以$n-r(AB) = n-r(B)$, $r(AB)=r(B)$.
+\end{proof}
+\noindent 24.问$y$为何值时,向量$\beta = [4,6,y,-2]^{T}$可以由向量组$\alpha_{1} = [2,3,1,-2]^{T}, \alpha_{2} = [3,-2,-5,3]^{T},\alpha_{3} = [-3,2,2,-1]^{T}$线性表出.
+\begin{proof}[证]
+	$[\alpha_{1},\alpha_{2},\alpha_{3},\beta] = \left[
+	\begin{matrix}
+	2 & 3 & -3 & 4 \\
+	3 & -2 & 2 & 6  \\
+	1 & -5 & 2 & y\\
+	-2 & 3 & -1 & -2
+	\end{matrix}
+	\right] \xrightarrow[2R_{3}-R_{1};R_{4}+R_{1}]{2R_{2}-3R_{1}} \left[
+	\begin{matrix}
+	2 & 3 & -3 & 4 \\
+	0 & 1 & -1 & 0  \\
+	0 & -13 & 7 & 2y-4\\
+	0 & 3 & -2 & 1
+	\end{matrix} 
+	\right] \xrightarrow[R_{4}-3R_{2}]{R_{3}+13R_{2}} \left[
+	\begin{matrix}
+	2 & 3 & -3 & 4 \\
+	0 & 1 & -1 & 0  \\
+	0 & 0 & 3 & 2-y\\
+	0 & 0 & 1 & 1
+	\end{matrix} 
+	\right] \xrightarrow{3R_{4}-R_{3}} \left[
+	\begin{matrix}
+	2 & 3 & -3 & 4 \\
+	0 & 1 & -1 & 0  \\
+	0 & 0 & 3 & 2-y\\
+	0 & 0 & 0 & 1+y
+	\end{matrix} 
+	\right]$\\
+	所以,当$1+y=0,y=-1$时,向量$\beta$可以由向量组$\alpha_{1}, \alpha_{2},\alpha_{3}$线性表出.
+\end{proof}
+\noindent 26.求下列向量组的秩和极大线性无关组：\\
+\noindent (1)$\alpha_{1}=[2,1,0]^{T}, \alpha_{2}=[3,1,1]^{T}, \alpha_{3}=[2,0,2]^{T}, \alpha_{4}=[4,2,0]^{T}$;
+\begin{proof}[解]
+	$[\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}] = \left[
+	\begin{matrix}
+	2 & 3 & 2 & 4 \\
+	1 & 1 & 0 & 2 \\
+	0 & 1 & 2 & 0 
+	\end{matrix}
+	\right] \xrightarrow{2R_{2}-R_{1}} \left[
+	\begin{matrix}
+	2 & 3 & 2 & 4 \\
+	0 & -1 & -2 & 0 \\
+	0 & 1 & 2 & 0 
+	\end{matrix}
+	\right] \\
+	\xrightarrow{R_{3}+R_{2}} 
+	\left[
+	\begin{matrix}
+	2 & 3 & 2 & 4 \\
+	0 & -1 & -2 & 0 \\
+	0 & 0 & 0 & 0 
+	\end{matrix}
+	\right]$\\
+	所以，向量组的秩为2，极大线性无关组可以为$\alpha_{1}, \alpha_{2};\alpha_{1}, \alpha_{3};\alpha_{2}, \alpha_{3};\alpha_{2}, \alpha_{4};\alpha_{3}, \alpha_{4}$
+\end{proof}
+\noindent (2)$\alpha_{1}=[1,1,1,1]^{T}, \alpha_{2}=[1,1,-1,-1]^{T}, \alpha_{3}=[1,-1,-1,1]^{T}, \alpha_{4}=[-1,-1,-1,1]^{T}$;
+\begin{proof}[解]
+	$[\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}] = \left[
+	\begin{matrix}
+	1 & 1 & 1 & -1 \\
+	1 & 1 & -1 & -1 \\
+	1 & -1 & -1 & -1 \\
+	1 & -1 & 1 & 1 
+	\end{matrix}
+	\right] \xrightarrow[R_{3}-R_{1};R_{4}-R_{1}]{R_{2}-R_{1}} \left[
+	\begin{matrix}
+	1 & 1 & 1 & -1 \\
+	0 & 0 & -2 & 0 \\
+	0 & -2 & -2 & 0 \\
+	0 & -2 & 0 & 2 
+	\end{matrix}
+	\right] \\
+	\xrightarrow[R_{24}]{-1/2R_{2};-1/2R_{3};-1/2R_{4}} 
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & -1 \\
+	0 & 1 & 0 & -1 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 0
+	\end{matrix}
+	\right] 
+	\xrightarrow{R_{3}-R_{2}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & -1 \\
+	0 & 1 & 0 & -1 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 1 & 0
+	\end{matrix}
+	\right] \\
+	\xrightarrow{R_{4}-R_{3}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & -1 \\
+	0 & 1 & 0 & -1 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & -1
+	\end{matrix}
+	\right] \\
+	$\\
+	所以，向量组的秩为4，极大线性无关组可以为$\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}$
+\end{proof}
+\noindent (3)$\alpha_{1}=[6,4,1,-1,2]^{T}, \alpha_{2}=[1,0,2,3,-4]^{T}, \alpha_{3}=[1,4,-9,-16,22]^{T}, \alpha_{4}=[7,1,0,-1,3]^{T}$;
+\begin{proof}[解]
+	$$
+	[\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}] = \left[
+	\begin{matrix}
+	6 & 1 & 1 & 7 \\
+	4 & 0 & 4 & 1 \\
+	1 & 2 & -9 & 0 \\
+	-1 & 3 & -16 & -1\\
+	2 & -4 & 22 & 3 
+	\end{matrix}
+	\right]	
+	$$
+	$$
+	\xrightarrow{R_{1}-6R_{3};R_{2}-4R_{3};R_{4}+R_{3};R_{5}-2R_{3}}
+	\left[
+	\begin{matrix}
+	0 & -11 & 55 & 7 \\
+	0 & -8 & 40 & 1 \\
+	1 & 2 & -9 & 0 \\
+	0 & 5 & -25 & -1\\
+	0 & -8 & 40 & 3 
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{...}
+	\left[
+	\begin{matrix}
+	1 & 2 & -9 & 0 \\
+	0 & 1 & -5 & -1/5 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{...}
+	\left[
+	\begin{matrix}
+	1 & 0 & 1 & 0 \\
+	0 & 1 & -5 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 
+	\end{matrix}
+	\right]
+	$$
+	所以，向量组的秩为3，极大线性无关组可以为$\alpha_{1}, \alpha_{2}, \alpha_{4};\alpha_{1}, \alpha_{3}, \alpha_{4};\alpha_{2}, \alpha_{3}, \alpha_{4}$
+\end{proof}
+\noindent 27.已知向量组$\alpha_{1}=[1,-1,2,1,0]^{T}, \alpha_{2}=[2,-2,4,-2,0]^{T}, \alpha_{3}=[3,0,6,-1,1]^{T}, \alpha_{4}=[0,x,0,0,1]^{T}$有4个不同的极大线性无关组求$x$的值.
+\begin{proof}[解]
+	$$
+	[\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}] = \left[
+	\begin{matrix}
+	1 & 2 & 3 & 0 \\
+	-1 & -2 & 0 & x \\
+	2 & 4 & 6 & 0 \\
+	1 & -2 & -1 & 0\\
+	0 & 0 & 1 & 1
+	\end{matrix}
+	\right]	
+	$$
+	$$
+	\xrightarrow{R_{2}+R_{1};R_{3}-2R_{1};R_{4}-R_{1}}
+	 \left[
+	\begin{matrix}
+	1 & 2 & 3 & 0 \\
+	0 & 0 & 3 & x \\
+	0 & 0 & 0 & 0 \\
+	0 & -4 & -4 & 0\\
+	0 & 0 & 1 & 1
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{-1/4R_{4};R_{2}-3R_{5}}
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 & 0 \\
+	0 & 0 & 0 & x-3 \\
+	0 & 0 & 0 & 0 \\
+	0 & 1 & 1 & 0\\
+	0 & 0 & 1 & 1
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{}
+	\left[
+	\begin{matrix}
+	1 & 2 & 3 & 0 \\
+	0 & 1 & 1 & 0\\
+	0 & 0 & 1 & 1\\
+	0 & 0 & 0 & x-3 \\
+	0 & 0 & 0 & 0 
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & -1 \\
+	0 & 1 & 0 & -1\\
+	0 & 0 & 1 & 1\\
+	0 & 0 & 0 & x-3 \\
+	0 & 0 & 0 & 0 
+	\end{matrix}
+	\right]
+	$$
+	1)$x-3 \neq 0, x \neq 3$时，只有一个极大线性无关组$\alpha_{1}, \alpha_{2}, \alpha_{3}, \alpha_{4}$.\\
+	2)$x-3=0, x=3$时，有4个极大线性无关组，$\alpha_{1}, \alpha_{2}, \alpha_{3};\alpha_{1}, \alpha_{2}, \alpha_{4};\alpha_{1}, \alpha_{3}, \alpha_{4};\alpha_{2}, \alpha_{3}, \alpha_{4}$.\\
+\end{proof}
+\noindent 28.求下列齐次方程组的一个基础解系:\\
+\noindent(1)
+$$
+\left\{
+\begin{aligned}
+x_{1}-2x_{2}+4x_{3}-7x_{4}=0 \\
+2x_{1}+x_{2}-2x_{3}+x_{4}=0 \\
+3x_{1}-x_{2}+2x_{3}-4x_{4}=0
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & -2 & 4 & -7 \\
+	2 & 1 & -2 & 1\\
+	3 & -1 & 2 & -4
+	\end{matrix}
+	\right]
+	\xrightarrow{R_{2}-2R_{1};R_{3}-3R_{1}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 4 & -7 \\
+	0 & 1 & -2 & 3\\
+	0 & -5 & 10 & -17
+	\end{matrix}
+	\right]
+	\xrightarrow{R_{3}+5R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -2 & 4 & -7 \\
+	0 & 1 & -2 & 3\\
+	0 & 0 & 0 & -2
+	\end{matrix}
+	\right]\\
+	\xrightarrow{...}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & -2 & 0\\
+	0 & 0 & 0 & 1
+	\end{matrix}
+	\right]
+	$\\
+	$n-r(A) = 4-3=1$,解得一个基础$(0,2,1,0)^{T}$
+\end{proof}
+\noindent (2)
+$$
+\left\{
+\begin{aligned}
+2x_{1}+x_{2}-x_{3}-x_{4}+x_{5}=0 \\
+x_{1}-x_{2}+x_{3}+x_{4}-2x_{5}=0 \\
+3x_{1}+3x_{2}-3x_{3}-3x_{4}+4x_{5}=0 \\
+4x_{1}+5x_{2}-5x_{3}-5x_{4}+7x_{5}=0
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	2 & 1 & -1 & -1 & 1 \\
+	1 & -1 & 1 & 1 & -2\\
+	3 & 3 & -3 & -3 & 4\\
+	4 & 5 & -5 & -5 & 7
+	\end{matrix}
+	\right] 
+	\xrightarrow{R_{1}-2R_{2};R_{3}-2R_{2};R_{4}-4R_{2}}
+	\left[
+	\begin{matrix}
+	0 & -3 & 3 & 3 & -5 \\
+	1 & -1 & 1 & 1 & -2\\
+	0 & -3 & 3 & 3 & -5\\
+	0 & -3 & 3 & 3 & -5
+	\end{matrix}
+	\right] \\
+	\xrightarrow{3R_{2}-R_{1};R_{3}-R_{1};R_{4}-R_{1}}
+	\left[
+	\begin{matrix}
+	0 & -3 & 3 & 3 & -5 \\
+	3 & 0 & 0 & 0 & -1\\
+	0 & 0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]
+	$\\
+	$n-r(A)=5-2=3$,得到一个基础解系为$(0,1,1,0,0)^{T},(0,1,0,1,0)^{T},(\frac{1}{3},-\frac{5}{3},0,0,1)^{T}$
+\end{proof}
+\noindent 29.求下列线性方程组的通解，并表示成列向量线性组合的形式：\\
+\noindent (1)
+$$
+\left\{
+\begin{aligned}
+x_{1}-2x_{2}-x_{3}-x_{4}+x_{5}=0 \\
+2x_{1}+x_{2}-x_{3}+2x_{4}-3x_{5}=0 \\
+3x_{1}-2x_{2}-x_{3}+x_{4}-2x_{5}=0 \\
+2x_{1}-5x_{2}+x_{3}-2x_{4}+2x_{5}=0
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & -2 & -1 & -1 & 1 \\
+	2 & 1 & -1 & 2 & -3\\
+	3 & -2 & -1 & 1 & -2\\
+	2 & -5 & 1 & -2 & 2
+	\end{matrix}
+	\right] 
+	\xrightarrow{R_{2}-2R_{1};R_{3}-3R_{1};R_{4}-2R_{1}}
+	\left[
+	\begin{matrix}
+	1 & -2 & -1 & -1 & 1 \\
+	0 & -5 & -1 & -4 & 5 \\
+	0 & -4 & -2 & -4 & 5\\
+	0 & 1 & -3 & 0 & 0
+	\end{matrix}
+	\right]\\
+	\xrightarrow{R_{2}+5R_{4};R_{3}+4R_{4}}
+	\left[
+	\begin{matrix}
+	1 & -2 & -1 & -1 & 1 \\
+	0 & 0 & -16 & -4 & 5 \\
+	0 & 0 & -14 & -4 & 5\\
+	0 & 1 & -3 & 0 & 0
+	\end{matrix}
+	\right]
+	\xrightarrow{8R_{3}-7R_{2}}
+	\left[
+	\begin{matrix}
+	1 & -2 & -1 & -1 & 1 \\
+	0 & 0 & -16 & -4 & 5 \\
+	0 & 0 & 0 & -4 & 5\\
+	0 & 1 & -3 & 0 & 0
+	\end{matrix}
+	\right]\\
+	\xrightarrow{}
+	\left[
+	\begin{matrix}
+	1 & -2 & -1 & -1 & 1 \\
+	0 & 1 & -3 & 0 & 0\\
+	0 & 0 & -16 & -4 & 5 \\
+	0 & 0 & 0 & -4 & 5
+	\end{matrix}
+	\right]\\
+	$
+	$n-r(A)=5-4=1$,得到一个基础解系为$(1,0,0,5,4)^{T}$,通解为
+	$$
+	\left[
+	\begin{matrix}
+	x_{1}\\
+	x_{2}\\
+	x_{3}\\
+	x_{4}\\
+	x_{5}
+	\end{matrix}
+	\right] = k
+	\left[
+	\begin{matrix}
+	1\\
+	0\\
+	0\\
+	5\\
+	4
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+\noindent (2)
+$$
+\left\{
+\begin{aligned}
+x_{1}+x_{2}+x_{3}+x_{4}+x_{5}=1 \\
+3x_{1}+2x_{2}+x_{3}+x_{4}-3x_{5}=0 \\
+1x_{2}+2x_{3}+2x_{4}+6x_{5}=3 \\
+5x_{1}+4x_{2}+3x_{3}+3x_{4}-x_{5}=2
+\end{aligned}
+\right.
+$$
+\begin{proof}[解]
+	$
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1 & 1 & 1\\
+	3 & 2 & 1 & 1 & -3 & 0\\
+	0 & 1 & 2 & 2 & 6 & 3\\
+	5 & 4 & 3 & 3 & -1 & 2
+	\end{matrix}
+	\right]
+	\xrightarrow{R_{2}-3R_{1};R_{4}-5R_{1}}
+	\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1 & 1 & 1\\
+	0 & 1 & 2 & 2 & 6 & 3\\
+	0 & 1 & 2 & 2 & 6 & 3\\
+	0 & 1 & 2 & 2 & 6 & 3
+	\end{matrix}
+	\right]\\
+	\xrightarrow{}
+	\left[
+	\begin{matrix}
+	1 & 0 & -1 & -1 & -5 & -2\\
+	0 & 1 & 2 & 2 & 6 & 3\\
+	0 & 0 & 0 & 0 & 0 & 0\\
+	0 & 0 & 0 & 0 & 0 & 0
+	\end{matrix}
+	\right]\\
+	$
+	得到对应齐次方程的一个基础解系为$(1,-2,1,0,0)^{T},(1,-2,0,1,0)^{T},(5,-6,0,0,1)^{T}$，得到一个非齐次方程特解为$(-2,3,0,0,0)^{T}$，所以，特解为：
+	$$
+	\left[
+	\begin{matrix}
+	x_{1}\\
+	x_{2}\\
+	x_{3}\\
+	x_{4}\\
+	x_{5}
+	\end{matrix}
+	\right] = 
+	\left[
+	\begin{matrix}
+	-2\\
+	3\\
+	0\\
+	0\\
+	0
+	\end{matrix}
+	\right] + k_{1}
+	\left[
+	\begin{matrix}
+	1\\
+	-2\\
+	1\\
+	0\\
+	0
+	\end{matrix}
+	\right] + k_{2}
+	\left[
+	\begin{matrix}
+	1\\
+	-2\\
+	0\\
+	1\\
+	0
+	\end{matrix}
+	\right] + k_{3}
+	\left[
+	\begin{matrix}
+	5\\
+	-6\\
+	0\\
+	0\\
+	1
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+\noindent 30.已知：向量组I可用向量组II线性表出，向量组II可用向量组III线性表出，求出：向量组I可用向量组III线性表出.
+\begin{proof}[证]
+	不妨令向量组I为($\alpha_{1},\alpha_{2},...,\alpha_{m}$).\\
+	向量组II为($\beta_{1},\beta_{2},...,\beta_{n}$).\\
+	向量组III为($\gamma_{1},\gamma_{2},...,\gamma_{k}$).\\
+	而向量组I可用向量组II线性表出，所以存在$n \times m$矩阵A使得：
+	$$
+	[\alpha_{1},\alpha_{2},...,\alpha_{m}] = [\beta_{1},\beta_{2},...,\beta_{n}]A
+	$$
+	向量组II可用向量组III线性表出，所以存在$k \times n$矩阵B使得：
+	$$
+	[\beta_{1},\beta_{2},...,\beta_{n}] = [\gamma_{1},\gamma_{2},...,\gamma_{k}]B
+	$$
+	所以：
+	$$
+	[\alpha_{1},\alpha_{2},...,\alpha_{m}] = [\beta_{1},\beta_{2},...,\beta_{n}]A
+	$$
+	$$
+	= [\gamma_{1},\gamma_{2},...,\gamma_{k}]BA
+	$$
+	其中$BA$为$k \times m$矩阵，则向量组I可用向量组III线性表出.
+\end{proof}
+\noindent 31.设向量组$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$线性无关. 证明:当且仅当$n$为奇数时,向量组$\alpha_{1}+\alpha_{2},\alpha_{2}+\alpha_{3},\cdots , \alpha_{n-1}+\alpha_{n}, \alpha_{n}+\alpha_{1}$也线性无关.
+\begin{proof}[证]
+	假设向量组$\alpha_{1}+\alpha_{2},\alpha_{2}+\alpha_{3},\cdots , \alpha_{n-1}+\alpha_{n}, \alpha_{n}+\alpha_{1}$线性相关,那必然存在不全为0的实数$k_{1}, k_{2}, k_{3}, \cdots, k_{n}$,使得
+	$$k_{1}(\alpha_{1}+\alpha_{2})+k_{2}(\alpha_{2}+\alpha_{3})+\cdots + k_{n-1}(\alpha_{n-1}+\alpha_{n})+ k_{n}(\alpha_{n}+\alpha_{1})=0$$
+	整理得
+	$$
+	(k_{1}+k_{n})\alpha_{1} + (k_{1}+k_{2})\alpha_{2} + \cdots + (k_{n-1}+k_{n})\alpha_{n} = 0
+	$$
+	因为$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$线性无关,所以我们得到方程组
+	$$
+	\left\{
+	\begin{aligned}
+	k_{1}+k_{n} & = 0 \\
+	k_{1}+k_{2} & = 0 \\
+	\vdots & \\
+	k_{n-1}+k_{n} & = 0
+	\end{aligned}
+	\right.
+	$$
+	系数矩阵为
+	$$
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & \cdots & 0 & 1 \\
+	1 & 1 & 0 & \cdots & 0 & 0 \\
+	0 & 1 & 1 & \cdots & 0 & 0 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & 0 & \cdots & 1 & 0 \\
+	0 & 0 & 0 & \cdots & 1 & 1
+	\end{matrix}
+	\right]
+	$$
+	1)$n$为偶数
+	$$
+	\xrightarrow{R_{2}-R_{1}, R_{3}-R_{2}, \cdots, R_{n}-R_{n-1}}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & \cdots & 0 & 1 \\
+	0 & 1 & 0 & \cdots & 0 & -1 \\
+	0 & 0 & 1 & \cdots & 0 & 1 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & 0 & \cdots & 1 & 1 \\
+	0 & 0 & 0 & \cdots & 0 & 0
+	\end{matrix}
+	\right]
+	$$
+	方程组有非零解,所以$\alpha_{1}+\alpha_{2},\alpha_{2}+\alpha_{3},\cdots , \alpha_{n-1}+\alpha_{n}, \alpha_{n}+\alpha_{1}$线性相关.\\
+	2)$n$为奇数
+	$$
+	\xrightarrow{R_{2}-R_{1}, R_{3}-R_{2}, \cdots, R_{n}-R_{n-1}}
+	\left[
+	\begin{matrix}
+	1 & 0 & 0 & \cdots & 0 & 1 \\
+	0 & 1 & 0 & \cdots & 0 & -1 \\
+	0 & 0 & 1 & \cdots & 0 & 1 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & 0 & \cdots & 1 & -1 \\
+	0 & 0 & 0 & \cdots & 0 & 2
+	\end{matrix}
+	\right]
+	$$
+	方程组只有零解,所以$\alpha_{1}+\alpha_{2},\alpha_{2}+\alpha_{3},\cdots , \alpha_{n-1}+\alpha_{n}, \alpha_{n}+\alpha_{1}$线性无关.
+\end{proof}
+\noindent 32.设向量$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性无关,而向量组$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\beta, \gamma$线性相关.证明:或者$\beta$与$\gamma$中至少有一个可由$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性表出,或者向量组$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\beta$与向量组$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\gamma$可相互线性表出.
+\begin{proof}[证]
+	因为$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\beta, \gamma$线性相关,所以存在不全为0得数$k_{1}, k_{2}, \cdots ,k_{n}, r, s$使得
+	$$
+	k_{1}\alpha_{1}+k_{2}\alpha_{2}+ \cdots +k_{n}\alpha_{n} + r\beta+ s\gamma = 0
+	$$
+	1)$r=0, s=0$这是不可能的,因为$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性无关.\\
+	2)$r \neq 0, s=0$,此时$\beta$可由$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性表出
+	$$
+	\beta = -\frac{1}{r}(k_{1}\alpha_{1}+k_{2}\alpha_{2}+ \cdots +k_{n}\alpha_{n})
+	$$
+	3)$r = 0, s \neq 0$,此时$\gamma$可由$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性表出
+	$$
+	\gamma = -\frac{1}{s}(k_{1}\alpha_{1}+k_{2}\alpha_{2}+ \cdots +k_{n}\alpha_{n})
+	$$
+	3)$r \neq 0, s \neq 0$,此时$\beta, \gamma$都可由$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性表出
+	$$
+	\beta = -\frac{1}{r}(k_{1}\alpha_{1}+k_{2}\alpha_{2}+ \cdots +k_{n}\alpha_{n}+s\gamma)
+	$$
+	$$
+	\gamma = -\frac{1}{s}(k_{1}\alpha_{1}+k_{2}\alpha_{2}+ \cdots +k_{n}\alpha_{n}+r\beta)
+	$$
+	而$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$本身可由$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n}$线性表出,所以,向量组$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\beta$与向量组$\alpha_{1}, \alpha_{2},\cdots ,\alpha_{n},\gamma$可相互线性表出.
+\end{proof}
+\noindent 33.设$\beta_{1} = \alpha_{2} + \alpha_{3} + \cdots + \alpha_{n}, \beta_{2} = \alpha_{1} + \alpha_{3} + \cdots + \alpha_{n}, \beta_{n} = \alpha_{1} + \alpha_{2} + \cdots + \alpha_{n-1}$,其中$m > 1$.证明：向量组$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$与向量组$\beta_{1}, \beta_{2}, \cdots, \beta_{n}$可相互线性表出.
+\begin{proof}[证]
+	注意到
+	$$
+	[\beta_{1}, \beta_{2}, \cdots, \beta_{n}] = [\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}]\left[
+	\begin{matrix}
+	0 & 1 & 1 & \cdots & 1 & 1 \\
+	1 & 0 & 1 & \cdots & 1 & 1 \\
+	1 & 1 & 0 & \cdots & 1 & 1 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	1 & 1 & 1 & \cdots & 0 & 1\\
+	1 & 1 & 1 & \cdots & 1 & 0
+	\end{matrix}
+	\right]
+	$$
+	令$A = \left[
+	\begin{matrix}
+	0 & 1 & 1 & \cdots & 1 & 1 \\
+	1 & 0 & 1 & \cdots & 1 & 1 \\
+	1 & 1 & 0 & \cdots & 1 & 1 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	1 & 1 & 1 & \cdots & 0 & 1\\
+	1 & 1 & 1 & \cdots & 1 & 0
+	\end{matrix}
+	\right]$,$A$是满秩矩阵,所以$A$可逆,所以
+	$$
+	[\beta_{1}, \beta_{2}, \cdots, \beta_{n}]A^{-1} = [\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}]
+	$$
+	所以,$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$能由$\beta_{1}, \beta_{2}, \cdots, \beta_{n}$线性表出.
+\end{proof}
+\noindent 34.设向量组$\alpha_{1},\alpha_{2},...,\alpha_{n}$与$\beta_{1},\beta_{2},...,\beta_{n}$满足：
+$$
+\alpha_{i} = \left[
+\begin{matrix}
+x_{1i}\\
+x_{2i}\\
+\vdots\\
+x_{ri}
+\end{matrix}
+\right], \beta_{i} = \left[
+\begin{matrix}
+x_{1i}\\
+x_{2i}\\
+\vdots\\
+x_{ri}\\
+x_{(r+1)i}\\
+\vdots\\
+x_{mi}
+\end{matrix}
+\right],i=1,2,...,n
+$$
+证明:若$\beta_{1},\beta_{2},...,\beta_{n}$线性相关,则$\alpha_{1},\alpha_{2},...,\alpha_{n}$线性相关;若$\alpha_{1},\alpha_{2},...,\alpha_{n}$线性无关,则$\beta_{1},\beta_{2},...,\beta_{n}$线性无关.
+\begin{proof}[证]
+	令$[\alpha_{1},\alpha_{2},...,\alpha_{n}] = A$，$A$为$r \times n$的矩阵.\\
+	则$[\beta_{1},\beta_{2},...,\beta_{n}]$可用分块矩阵$\left[
+	\begin{matrix}
+	A\\
+	B
+	\end{matrix}
+	\right]$表示.\\
+	而$\beta_{1},\beta_{2},...,\beta_{n}$线性相关.\\
+	所以,$\left[
+	\begin{matrix}
+	A\\
+	B
+	\end{matrix}
+	\right]x=0$有非零解.即$Ax=0$有非零解.\\
+	所以,$\alpha_{1},\alpha_{2},...,\alpha_{n}$线性相关.\\
+	后者是前者的逆否命题,所以也成立.即若$\alpha_{1},\alpha_{2},...,\alpha_{n}$线性无关,则$\beta_{1},\beta_{2},...,\beta_{n}$线性无关.
+\end{proof}
+\noindent 35.给定$n$个非零的数$a_{1}, a_{2}, \cdots, a_{n}$,求下面向量组的秩:
+$$
+\eta_{1} = [1+a_{1}, 1, \cdots, 1],\eta_{2} = [1, 1+a_{2}, \cdots, 1],\cdots, \eta_{n} = [1, 1, \cdots, 1+a_{n}]
+$$
+\begin{proof}[解]
+	$[\eta_{1}, \eta_{2}, \cdots, \eta_{n}] = \left[
+	\begin{matrix}
+	1+a_{1} & 1 & 1 & \cdots & 1 & 1 \\
+	1 & 1+a_{2} & 1 & \cdots & 1 & 1 \\
+	1 & 1 & 1+a_{3} & \cdots & 1 & 1 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	1 & 1 & 1 & \cdots & 1+a_{n-1} & 1\\
+	1 & 1 & 1 & \cdots & 1 & 1+a_{n}
+	\end{matrix}
+	\right]$
+	$$
+	\xrightarrow{R_{2}-R_{1}, R_{3}-R_{1}, ...,R_{n}-R_{1}}
+	\left[
+	\begin{matrix}
+	1+a_{1} & 1 & 1 & \cdots & 1 & 1 \\
+	-a_{1} & a_{2} & 0 & \cdots & 0 & 0 \\
+	-a_{1} & 0 & a_{3} & \cdots & 0 & 0 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	-a_{1} & 0 & 0 & \cdots & a_{n-1} & 0\\
+	-a_{1} & 0 & 0 & \cdots & 0 & a_{n}
+	\end{matrix}
+	\right]
+	$$
+	$$
+	\xrightarrow{C_{1}+\frac{a_{1}}{a_{2}}+\frac{a_{1}}{a_{3}}+...+\frac{a_{1}}{a_{n}}}
+	\left[
+	\begin{matrix}
+	1+a_{1}+ \frac{a_{1}}{a_{2}}+\frac{a_{1}}{a_{3}}+...+\frac{a_{1}}{a_{n}}& 1 & 1 & \cdots & 1 & 1 \\
+	0 & a_{2} & 0 & \cdots & 0 & 0 \\
+	0 & 0 & a_{3} & \cdots & 0 & 0 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & 0 & \cdots & a_{n-1} & 0\\
+	0 & 0 & 0 & \cdots & 0 & a_{n}
+	\end{matrix}
+	\right]
+	$$
+	所以,当$1+a_{1}+ \frac{a_{1}}{a_{2}}+\frac{a_{1}}{a_{3}}+...+\frac{a_{1}}{a_{n}} = 0$,即$1+\frac{1}{a_{1}}+ \frac{1}{a_{2}}+\frac{1}{a_{3}}+...+\frac{1}{a_{n}}=0$,秩为$n-1$.\\
+	当$1+a_{1}+ \frac{a_{1}}{a_{2}}+\frac{a_{1}}{a_{3}}+...+\frac{a_{1}}{a_{n}} \neq 0$,即$1+\frac{1}{a_{1}}+ \frac{1}{a_{2}}+\frac{1}{a_{3}}+...+\frac{1}{a_{n}} \neq 0$,秩为$n$.
+\end{proof}
+\noindent 36.设$A,B$分别是$m \times n$和$n \times s$的矩阵,且$AB=O$.证明:$rank(A)+rank(B) \leq n$
+\begin{proof}[证]
+	由$p_{45}$的例2.2.3得$r(A)+r(B) \leq r(AB)+n = n$
+\end{proof}
+\noindent 37.设$\eta_{1},\eta_{2},...,\eta_{t}$是某一非齐次线性方程组得解.证明:$\mu_{1}\eta_{1}+\mu_{2}\eta_{2}+...+\mu_{t}\eta_{t}$也是该齐次线性方程组的解的充要条件是$\mu_{1}+\mu_{2}+...+\mu_{t}=1$.
+\begin{proof}[证]
+	令$\eta_{1},\eta_{2},...,\eta_{n}$是$Ax=b$的解.\\
+	则令$A(\mu_{1}\eta_{1}+\mu_{2}\eta_{2}+...+\mu_{t}\eta_{t})=b$\\
+	$\Leftrightarrow \mu_{1}A\eta_{1}+\mu_{2}A\eta_{2}+...+\mu_{t}A\eta_{t}=b$\\
+	$\Leftrightarrow \mu_{1}b+\mu_{2}b+...+\mu_{t}b=b$\\
+	$\Leftrightarrow (\mu_{1}+\mu_{2}+...+\mu_{t})b=b$\\
+	$\Leftrightarrow \mu_{1}+\mu_{2}+...+\mu_{t} = 1$ \\
+	充要性得证.
+\end{proof}
+\noindent 38.证明:方程组
+$$
+\left\{
+\begin{aligned}
+a_{11}x_{1}+a_{12}x_{2}+\cdots+a_{1n}x_{n}=0 \\
+a_{21}x_{1}+a_{22}x_{2}+\cdots+a_{2n}x_{n}=0 \\
+\cdots & \\
+a_{m1}x_{1}+a_{m2}x_{2}+\cdots+a_{mn}x_{n}=0 
+\end{aligned}
+\right.
+$$
+的解全是方程$b_{1}x_{1}+b_{2}x_{2}+\cdots+b_{n}x_{n}=0$的解的充要条件是:向量$\beta = [b_{1}, b_{2}, ..., b_{n}]$可由向量组$\alpha_{1}, \alpha_{2},...,\alpha_{m}$线性表出,其中
+$$
+\alpha_{i}=[a_{i1}, a_{i2},...,a_{in}], i=1,2,...,m
+$$
+\begin{proof}[证]
+	1)必要性:\\
+	令系数矩阵为$A =
+	\left[
+	\begin{matrix}
+	\alpha_{1} \\
+	\alpha_{2} \\
+	\vdots\\
+	\alpha_{m}
+	\end{matrix}
+	\right]
+	$
+	则$Ax=0$的解,全是$\beta x=0$的解.\\
+	所以$Ax=0$与$\left[
+	\begin{matrix}
+	A \\
+	\beta
+	\end{matrix}
+	\right]x = 0$同解.\\
+	这意味着$r(A) = r(\left[
+	\begin{matrix}
+	A \\
+	\beta
+	\end{matrix}
+	\right])$, $r(A^{T})=r([A^{T}|\beta^{T}])$\\
+	即向量$\beta = [b_{1}, b_{2}, ..., b_{n}]$可由向量组$\alpha_{1}, \alpha_{2},...,\alpha_{m}$线性表出.\\
+	2)充分性:\\
+	向量$\beta = [b_{1}, b_{2}, ..., b_{n}]$可由向量组$\alpha_{1}, \alpha_{2},...,\alpha_{m}$线性表出.\\
+	则存在不全为0的数$k_{1}, k_{2},...,k_{m}$
+	使得
+	$$
+	\beta = k_{1}\alpha_{1}+k_{2}\alpha_{2}+\cdots+k_{m}\alpha_{m}
+	$$
+	假设$x$为$Ax=0$的解\\
+	则$\alpha_{1}x=0, \alpha_{2}x = 0, \cdots , \alpha_{m}x = 0$.\\
+	所以$k_{1}\alpha_{1}x=0, k_{2}\alpha_{2}x = 0, \cdots , k_{m}\alpha_{m}x = 0$\\
+	$\beta x=(k_{1}\alpha_{1}+k_{2}\alpha_{2}+\cdots+k_{m}\alpha_{m})x = k_{1}\alpha_{1}x+k_{2}\alpha_{2}x+\cdots +k_{m}\alpha_{m}x = 0$\\
+	我们得到$x$也是$\beta x = 0$的解.
+\end{proof}
+\noindent 39.求下列矩阵的逆矩阵(只有答案)\\
+\noindent (1)$
+\left[
+\begin{matrix}
+1 & 1 & 1 & 1\\
+1 & 1 & -1 & -1\\
+1 & -1 & 1 & -1\\
+1 & -1 & -1 & 1
+\end{matrix}
+\right]$;(2)$
+\left[
+\begin{matrix}
+5 & 2 & 0 & 0\\
+2 & 1 & 0 & 0\\
+0 & 0 & 1 & -2\\
+0 & 0 & 1 & 1
+\end{matrix}
+\right]$;(3)$
+\left[
+\begin{matrix}
+1 & a & a^{2} & a^{3}\\
+0 & 1 & a & a^{2}\\
+0 & 0 & 1 & a\\
+0 & 0 & 0 & 1
+\end{matrix}
+\right]$;\\
+(4)
+$
+\left[
+\begin{matrix}
+0 & a_{1} & 0 & \cdots & 0\\
+0 & 0 & a_{2} & \cdots & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots\\ 
+0 & 0 & 0 & \cdots & a_{n-1}\\
+a_{n} & 0 & 0 & \cdots & 0
+\end{matrix}
+\right]
+$
+\begin{proof}[解]
+	(1)
+	$$
+	A^{-1}=\frac{1}{4}A =  \frac{1}{4}\left[
+	\begin{matrix}
+	1 & 1 & 1 & 1\\
+	1 & 1 & -1 & -1\\
+	1 & -1 & 1 & -1\\
+	1 & -1 & -1 & 1
+	\end{matrix}
+	\right]
+	$$
+	(2)
+	$$
+	A^{-1} = \left[
+	\begin{matrix}
+	1 & -2 & 0 & 0\\
+	-2 & 5 & 0 & 0\\
+	0 & 0 & \frac{1}{3} & \frac{2}{3}\\
+	0 & 0 & -\frac{1}{3} & \frac{1}{3}
+	\end{matrix}
+	\right]
+	$$
+	(3)
+	$$
+	A^{-1} = \left[
+	\begin{matrix}
+	1 & -a & 0 & 0\\
+	0 & 1 & -a & 0\\
+	0 & 0 & 1 & -a\\
+	0 & 0 & 0 & 1
+	\end{matrix}
+	\right]
+	$$
+	(4)
+	$$
+	A^{-1} = \left[
+	\begin{matrix}
+	0 & 0 & 0 & \cdots & 0 & \frac{1}{a_{n}}\\
+	\frac{1}{a_{1}} & 0 & 0 & \cdots & 0 & 0\\
+	0 & \frac{1}{a_{2}} & 0 & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\ 
+	0 & 0 & 0 & \cdots & \frac{1}{a_{n-1}} & 0
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+\noindent 40.解下列矩阵方程:(只有答案)\\
+(1)$\left[
+\begin{matrix}
+1 & 1 & 1\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{matrix}
+\right]X= \left[
+\begin{matrix}
+5 & 6\\
+3 & 4\\
+1 & 2
+\end{matrix}
+\right]$\\
+(2)$X\left[
+\begin{matrix}
+1 & 2 & -3\\
+3 & 2 & -4\\
+2 & -1 & 0
+\end{matrix}
+\right]= \left[
+\begin{matrix}
+1 & -3 & 0\\
+10 & 2 & 7\\
+10 & 7 & 8
+\end{matrix}
+\right]$
+\begin{proof}[解]
+	(1)
+	$$X = \left[
+	\begin{matrix}
+	2 & 2\\
+	2 & 2\\
+	1 & 2
+	\end{matrix}
+	\right]$$
+	(2)
+	$$
+	X = \left[
+	\begin{matrix}
+	20 & -15 & 13\\
+	-105 & 77 & -58\\
+	-152 & 112 & -87
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+\noindent 41.设$A,B,C$均为$n$阶方阵,若$ABC=I$,则下列乘积:$ACB,BAC,BCA,CAB,CBA$中哪些必等于单位阵$I$.
+\begin{proof}[证]
+	$ABC = I$,则$A, B, C$均可逆.\\
+	$BCA = A^{-1}ABCA = A^{-1}IA = I$\\
+	$CAB = B^{-1}BCAB = B^{-1}IB = I$\\
+	其他均不一定等于$I$.
+\end{proof}
+\noindent 46.设$A,B$均为$n$阶可逆矩阵.证明：如果$A+B$可逆，则$A^{-1}+B^{-1}$也可逆，并求其逆矩阵.
+\begin{proof}[证]
+	注意到$A^{-1}(A+B)B^{-1} = A^{-1}AB^{-1}+A^{-1}BB^{-1} = B^{-1}+A^{-1}.$\\
+	而$A, B, A+B$均可逆,所以$A^{-1}+B^{-1}$也可逆.\\
+	$(A^{-1}+B^{-1})^{-1} = (A^{-1}(A+B)B^{-1})^{-1} = B(A+B)^{-1}A.$
+\end{proof}
+\noindent 47.(1)设$A$为$n$阶方阵，满足$A^{3}+2A^{2}-2A-I_{n}=O$,证明：$A+I_{n}$是可逆矩阵，并求其逆矩阵；\\
+\noindent (2)设$A,B$为$n$阶方阵，且$A-I_{n}$和$B$可逆.证明：若$(A-I_{n})^{-1} = (B-I_{n})^{T}$,则有$A$可逆;\\
+\noindent (3)设$A$为$n$阶方阵，满足$A^{2}+A-6I_{n}=O$,证明：$A, A+I_{n}, A+4I_{n}$是可逆矩阵，并求其逆矩阵.\\
+\noindent (1)
+\begin{proof}[证]
+	$A^{3}+2A^{2}-2A-I_{n}=O$\\
+	$\Rightarrow A^{3}+2A^{2}-2A-3I_{n}=-2I_{n}$\\
+	$\Rightarrow (A+I_{n})(A^{2}+A-3I_{n})=-2I_{n}$\\
+	$\Rightarrow A+I_{n}$可逆.\\
+	$\Rightarrow(A+I_{n})^{-1} = -\frac{1}{2}(A^{2}+A-3I_{n})$
+\end{proof}
+\noindent (2)
+\begin{proof}[证]
+	$(A-I_{n})^{-1} = (B-I_{n})^{T}$\\
+	$\Rightarrow (A-I_{n})^{-1}(A-I_{n}) = (B-I_{n})^{T}(A-I_{n})$\\
+	$\Rightarrow I_{n} = (B^{T}-I_{n})(A-I_{n})$\\
+	$\Rightarrow I_{n} = B^{T}A-A-B^{T}+I_{n}$\\
+	$\Rightarrow B^{T}A-A-B^{T} = O$\\
+	$\Rightarrow B^{T}(A-I_{n}) = A$\\
+	而$B, A-I_{n}$可逆，所以$A$可逆.
+\end{proof}
+\noindent (3)
+\begin{proof}[证]
+	$A^{2}+A-6I_{n}=O$\\
+	$\Rightarrow A^{2}+A=6I_{n}$\\
+	$\Rightarrow A(A+I_{n})=6I_{n}$\\
+	所以，$A,A+I_{n}$都可逆.\\
+	$A^{-1} = \frac{1}{6}(A+I_{n})$\\
+	$(A+I_{n})^{-1} = \frac{1}{6}A$\\
+	$A^{2}+A-12I_{n}=-6I_{n}$\\
+	$(A-3I_{n})(A+4I_{n})=-6I_{n}$\\
+	所以，$A+4I_{n}$可逆.\\
+	$(A+4I_{n})^{-1} = -\frac{1}{6}(A-3I_{n})$
+\end{proof}
+\noindent 48.已知$A,B$为3阶方阵,且满足$2A^{-1}B=B-4I$.\\
+\noindent (1)证明:矩阵$A-2I$可逆;\\
+\noindent (2)若$B = \left[
+\begin{matrix}
+1 & -2 & 0\\
+1 & 2 & 0\\
+0 & 0 & 2
+\end{matrix}
+\right]$求$A$.
+\noindent (1)
+\begin{proof}[证]
+	$2A^{-1}B=B-4I$\\
+	$\Rightarrow 2B = AB-4A$\\
+	$\Rightarrow AB-2B=4A$\\
+	$\Rightarrow (A-2I)B=4A$\\
+	$\Rightarrow (A-2I)BA^{-1} = 4I$\\
+	所以,$A-2I$可逆.
+\end{proof}
+\noindent (2)
+\begin{proof}[解]
+	$A=\left[
+	\begin{matrix}
+	0 & 2 & 0\\
+	-1 & -1 & 0\\
+	0 & 0 & -2
+	\end{matrix}
+	\right]$
+\end{proof}
+\noindent 49.设$\alpha$是$n$维非零列向量，记$A=I_{n}-\alpha\alpha^{T}$.证明：\\
+\noindent (1)$A^{2}=A$的充分必要条件为$\alpha^{T}\alpha=1$;\\
+\noindent (2)当$\alpha^{T}\alpha=1$时，$A$是不可逆矩阵;\\
+\begin{proof}[证]
+	(1)\\
+	充分性:\\
+	$A^{2} = (I_{n}-\alpha\alpha^{T})(I_{n}-\alpha\alpha^{T}) = I_{n}-2\alpha\alpha^{T}+\alpha\alpha^{T}\alpha\alpha^{T} = I_{n}-\alpha\alpha^{T} = A$\\
+	必要性：\\
+	$A^{2} = A$\\
+	$\Rightarrow (I_{n}-\alpha\alpha^{T})(I_{n}-\alpha\alpha^{T}) = I_{n}-\alpha\alpha^{T}$\\
+	$\Rightarrow I_{n}-(2-\alpha^{T}\alpha)\alpha\alpha^{T} =  I_{n}-\alpha\alpha^{T} $\\
+	$\Rightarrow 2-\alpha^{T}\alpha = 1$\\
+	$\Rightarrow \alpha^{T}\alpha = 1$\\
+	(2)\\
+	由(1)知$A^{2}=A$,即$A(I_{n}-A)=0$,即$A(\alpha\alpha^{T}) = 0$.\\
+	所以，$r(A)+r(\alpha\alpha^{T}) \leq n$\\
+	而$\alpha$是非零向量，所以$\alpha\alpha^{T}$为非零矩阵.\\
+	所以$r(\alpha\alpha^{T}) \geq 1$(事实上$r(\alpha\alpha^{T}) = 1$)\\
+	所以$r(A) \leq n-1$,即$A$为不可逆矩阵.
+\end{proof}
+\noindent 50.
+\begin{proof}[证]
+	$A^{T} = (I_{n}-P^{T}(PP^{T})^{-1}P)^{T}$\\
+	$=I_{n}-P^{T}((PP^{T})^{T})^{-1}P$\\
+	$=I_{n}-P^{T}(PP^{T})^{-1}P = A$\\
+	所以,$A$是对称矩阵.\\
+	$A^{2} = (I_{n}-P^{T}(PP^{T})^{-1}P)(I_{n}-P^{T}(PP^{T})^{-1}P)$\\
+	$=I_{n}-2P^{T}(PP^{T})^{-1}P+P^{T}(PP^{T})^{-1}PP^{T}(PP^{T})^{-1}P$\\
+	$=I_{n}-2P^{T}(PP^{T})^{-1}P+P^{T}(PP^{T})^{-1}P$\\
+	$=I_{n}-P^{T}(PP^{T})^{-1}P = A$\\
+	所以，$A^{2}=A$.
+\end{proof}
+\noindent 51.
+\begin{proof}[证]
+	证明$A^{T}A=I_{n}$即可.
+\end{proof}
+\noindent 52.
+\begin{proof}[解]
+	$A$为对角元素为1或-1的对角矩阵.
+\end{proof}
+\end{document}
+
