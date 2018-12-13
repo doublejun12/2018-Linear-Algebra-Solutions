@@ -15,12 +15,13 @@
 
 \title{}
 \author{}
+
 \date{}
 \begin{document}
 \chapter*{第四章：线性空间与线性变换}
 \noindent 2.
 \begin{proof}[解]
-	令$a_{1}f_{1}+a_{2}f_{2},a_{3}f_{3} = 0$,则$a_{1}+a_{2}(x-1)+a_{3}(x-1)^{2}=0$\\
+	令$a_{1}f_{1}+a_{2}f_{2}+a_{3}f_{3} = 0$,则$a_{1}+a_{2}(x-1)+a_{3}(x-1)^{2}=0$\\
 	$$a_{1}-a_{2}+a_{3}+(a_{2}-2a_{3})x+a_{3}x^{2} = 0$$
 	因为$1,x,x^{2}$线性无关，所以
 	$$
@@ -445,9 +446,9 @@
 \begin{proof}[解]
 	$c_{1}c_{3} \neq 0$,所以$\alpha = -\frac{1}{c_{1}}(c_{2}\beta+c_{3}\gamma)$\\
 	$\forall v \in span(\alpha,\beta), \exists \lambda_{1}, \lambda_{2} \in R, v=\lambda_{1}\alpha+\lambda_{2}\beta $\\
-	$v = (\lambda_{2} - \frac{c_{2}\lambda_{1}}{c_{1}})\alpha-\frac{c_{3}\lambda_{1}}{c_{1}}\gamma \in span(\alpha, \gamma)$\\
-	$span(\alpha, \beta) \subseteq span(\alpha,\gamma)$\\
-	同理可证$span(\alpha, \beta) \supseteq span(\alpha,\gamma)$\\，得到$span(\alpha, \beta) = span(\alpha,\gamma)$
+	$v = (\lambda_{2} - \frac{c_{2}\lambda_{1}}{c_{1}})\beta-\frac{c_{3}\lambda_{1}}{c_{1}}\gamma \in span(\beta, \gamma)$\\
+	$span(\alpha, \beta) \subseteq span(\beta,\gamma)$\\
+	同理可证$span(\alpha, \beta) \supseteq span(\beta,\gamma)$，得到$span(\alpha, \beta) = span(\beta,\gamma)$\\
 \end{proof}
 \noindent 15.
 \begin{proof}[解]
@@ -756,7 +757,7 @@
 	\end{matrix}
 	\right]$\\
 	解得唯一解$(2/3,1,-4/3)^{T}$,所以,$\alpha = \frac{2}{3}\alpha_{1}+\alpha_{2}-\frac{4}{3}\alpha_{3}$\\
-	其中$\frac{2}{3}\alpha_{1}+\alpha_{2} \in C(A)$, $-\frac{4}{3}\alpha_{3} \in C(A)^{T}$\\
+	其中$\frac{2}{3}\alpha_{1}+\alpha_{2} \in C(A)$, $-\frac{4}{3}\alpha_{3} \in C(A)^{\perp}$\\
 	所以，$\alpha$在$C(A)$中的正交投影为
 	$$\frac{2}{3}\alpha_{1}+\alpha_{2} = [5/3,2/3,7/3]^{T}$$
 	在$C(A)^{\perp}$中的投影为
