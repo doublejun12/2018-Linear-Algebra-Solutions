@@ -1,0 +1,721 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{xeCJK}
+
+\def\*#1{\mathbf{#1}}
+\def\rand{\xleftarrow{\$}}
+
+\title{}
+\author{}
+\date{}
+\begin{document}
+\chapter*{第五章}
+1.
+\begin{proof}[解]
+	(1) 由特征多项式
+	\begin{align*}
+	|\lambda \*I - \*A | &= \begin{vmatrix}
+	\lambda -2 & 1 & 1 \\
+	0 & \lambda -2 & 0 \\
+	4 & -1 & \lambda -3
+	\end{vmatrix} \\
+	&= (t - 2) \cdot (t^{2} - 5t + 2)
+	\end{align*}
+	得$\*A$的特征值是$\lambda_1 = 2, \lambda_2 = \frac{5+\sqrt{17}}{2}, \lambda_3 = \frac{5 - \sqrt{17}}{2}$.
+	
+	将$\lambda_1 = 2$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[ \begin{pmatrix}
+	0 & 1 & 1 \\
+	0 & 0 & 0 \\
+	4 & -1 & -1
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系是
+	\[ \begin{pmatrix}
+	0 \\
+	1 \\
+	-1
+	\end{pmatrix} \]
+	因此属于特征值$1$的全部特征向量为
+	\[ k_1 \begin{pmatrix}
+	0 \\
+	1 \\
+	-1
+	\end{pmatrix}, k_1 \neq 0 \]
+	将$\lambda_2 = \frac{5+\sqrt{17}}{2}$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[ \begin{pmatrix}
+	\frac{1+\sqrt{17}}{2} & 1 & 1 \\
+	0 & \frac{1+\sqrt{17}}{2} & 0 \\
+	4 & -1 & \frac{-1 + \sqrt{17}}{2}
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系是
+	\[ \begin{pmatrix}
+	1 \\
+	0 \\
+	-\frac{1+\sqrt{17}}{2}
+	\end{pmatrix} \]
+	因此属于特征值$\frac{5+\sqrt{17}}{2}$的全部特征向量为
+	\[ k_2 \begin{pmatrix}
+	1 \\
+	0 \\
+	-\frac{1+\sqrt{17}}{2}
+	\end{pmatrix}, k_2 \neq 0 \]
+	将$\lambda_3 = \frac{5 - \sqrt{17}}{2}$代入$(\lambda\*I - \*A) = \*0$, 得
+	\[ \begin{pmatrix}
+	\frac{1-\sqrt{17}}{2} & 1 & 1 \\
+	0 & \frac{1-\sqrt{17}}{2} & 0 \\
+	4 & -1 & \frac{-1 - \sqrt{17}}{2}
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系是
+	\[ \begin{pmatrix}
+	1 \\
+	0 \\
+	\frac{-1+\sqrt{17}}{2}
+	\end{pmatrix} \]
+	因此属于特征值$\frac{5-\sqrt{17}}{2}$的全部特征向量为
+	\[ k_3 \begin{pmatrix}
+	1 \\
+	0 \\
+	\frac{-1+\sqrt{17}}{2}
+	\end{pmatrix}, k_3\neq 0 \]
+	(2) 由特征多项式
+	\begin{align*}
+	|\lambda \*I - \*A | &= \begin{vmatrix}
+	\lambda +1 & -2 & -2 \\
+	-3 & \lambda +1 & -1 \\
+	-2 & -2 & \lambda +1
+	\end{vmatrix} \\
+	&= (\lambda + 3)^{2}(\lambda-3)
+	\end{align*}
+	得$\*A$的特征值是$\lambda_1 = \lambda_2 = -3, \lambda_3 = 3$\\
+	将$\lambda_1 = \lambda_2 = -3$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[ \begin{pmatrix}
+	-2 & -2 & -2 \\
+	-3 & -2 & -1 \\
+	-2 & -2 & -2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系是
+	\[ \begin{pmatrix}
+	-1 \\
+	2 \\
+	-1
+	\end{pmatrix} \]
+	因此属于特征值$-3$的全部特征向量为
+	\[ k_1 \begin{pmatrix}
+	-1 \\
+	2 \\
+	-1
+	\end{pmatrix}, k_1 \neq 0 \]
+	将$\lambda_3 = 3$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[ \begin{pmatrix}
+	4 & -2 & -2 \\
+	-3 & 4 & -1 \\
+	-2 & -2 & 4
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系是
+	\[ \begin{pmatrix}
+	1 \\
+	1 \\
+	1
+	\end{pmatrix} \]
+	因此属于特征值$3$的全部特征向量为
+	\[ k_2 \begin{pmatrix}
+	1 \\
+	1 \\
+	1
+	\end{pmatrix}, k_2 \neq 0 \]
+	
+	(3) 属于特征值$6$的全部特征向量为
+	\[ k_1 \begin{pmatrix}
+	1 \\
+	-2 \\
+	3
+	\end{pmatrix}, k_1 \neq 0  \]
+	属于特征值$2$的全部特征向量为
+	\[ k_2 \begin{pmatrix}
+	1 \\
+	0 \\
+	1
+	\end{pmatrix} + k_3 \begin{pmatrix}
+	0 \\
+	1 \\
+	1
+	\end{pmatrix}, k_2, k_3\text{不全为}0 \]
+\end{proof}
+2. 
+\begin{proof}[解]
+	\begin{align*}
+	\lambda_1 + \lambda_2 + \lambda_3 = tr(\*A) = a \\
+	\lambda_1 \lambda_2 \lambda_3 = \det(\*A) = -4a -2b^2 = -12 \\
+	\begin{vmatrix}
+	-3-a & 0 & -b \\
+	0 & -5 & 0 \\
+	-b & 0 & -1
+	\end{vmatrix} = -5a +5b^2 -15 = 0
+	\end{align*}
+	解得$\begin{cases}
+	a = 1 \\
+	b = \pm 2 \\
+	\lambda_2 = 2\\
+	\lambda_3 = 2
+	\end{cases}$.
+\end{proof}
+
+3.
+\begin{proof}[解]
+	设$\alpha$对应的特征值为$\lambda$, 则
+	\begin{align*}
+	\*A\alpha = \lambda \alpha \\
+	\end{align*}
+	解得 $\lambda = -1, a = -3, b = 0$.
+\end{proof}
+
+28.
+\begin{proof}[解]
+	(1) 由
+	\[|\lambda\*I - \*A| = \begin{vmatrix}
+	\lambda - 1 & -1 & -1 \\
+	-1 & \lambda-1 & -1 \\
+	-1 & -1 & \lambda-1
+	\end{vmatrix} = x^2(x-3) = 0\]
+	得矩阵$\*A$的特征值为$\lambda_1 = \lambda_2 = 0, \lambda_3 = 3$.
+	
+	将$\lambda_1 = \lambda_2 = 0$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[\begin{pmatrix}
+	-1 & -1 & -1 \\
+	-1 & -1 & -1 \\
+	-1 & -1 & -1
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	其基础解系为
+	\[\*x_1 = \begin{pmatrix}
+	-1 \\
+	1 \\
+	0
+	\end{pmatrix}, 
+	\*x_2 = \begin{pmatrix}
+	-1 \\
+	0 \\
+	1
+	\end{pmatrix}\]
+	将$\*x_1, \*x_2$正交化、单位化, 得
+	\[\epsilon_1 = \frac{1}{\sqrt{2}}\begin{pmatrix}
+	-1 \\
+	1 \\
+	0
+	\end{pmatrix}, \epsilon_2 = \frac{1}{\sqrt{6}}\begin{pmatrix}
+	-1 \\
+	-1 \\
+	2
+	\end{pmatrix}\]
+	将$\lambda_3 = 3$代入$(\lambda\*I - \*A)\*x = \*0$, 得
+	\[\begin{pmatrix}
+	2 & -1 & -1 \\
+	-1 & 2 & -1 \\
+	-1 & -1 & 2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	其基础解系为
+	\[\*x_3 = \begin{pmatrix}
+	1 \\
+	1 \\
+	1
+	\end{pmatrix}\]
+	将$\*x_3$单位化, 得
+	\[\epsilon_3 = \frac{1}{\sqrt{3}}\begin{pmatrix}
+	1 \\
+	1 \\
+	1
+	\end{pmatrix}\]
+	于是得正交阵
+	\[ \*P = \begin{pmatrix}
+	-\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\
+	\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} \\
+	0 & \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}}
+	\end{pmatrix}, \text{使得}\*P^T\*A\*P = \begin{pmatrix}
+	0 & 0 & 0 \\
+	0 & 0 & 0 \\
+	0 & 0 & 3
+	\end{pmatrix} \]
+	(2) 由
+	\[|\lambda\*I - \*A| = \begin{vmatrix}
+	\lambda-3 & -2 & -4 \\
+	-2 & \lambda & -2 \\
+	-4 & -2 & \lambda-3
+	\end{vmatrix} = (\lambda-8)(\lambda+1)^2\]
+	得矩阵$\*A$的特征值为$\lambda_1 = 8, \lambda_2 = \lambda_3 = -1$.
+	
+	将$\lambda_1 = 8$代入$\*A$的特征方程组, 得
+	\[\begin{pmatrix}
+	5 & -2 & -4 \\
+	-2 & 8 & -2 \\
+	-4 & -2 & 5
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	其基础解系为
+	\[\*x_1 = \begin{pmatrix}
+	2 \\
+	1 \\
+	2
+	\end{pmatrix}\]
+	将$\*x_1$单位化, 得
+	\[\epsilon_1 = \frac{1}{3}\begin{pmatrix}
+	2 \\
+	1 \\
+	2
+	\end{pmatrix}\]
+	将$\lambda_2 = \lambda_3 = -1$代入$\*A$的特征方程组, 得
+	\[\begin{pmatrix}
+	-4 & -2 & -4 \\
+	-2 & -1 & -2 \\
+	-4 & -2 & -4 
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其基础解系为
+	\[\*x_2 = \begin{pmatrix}
+	1 \\
+	0 \\
+	-1
+	\end{pmatrix}, 
+	\*x_3 = \begin{pmatrix}
+	0 \\
+	2 \\
+	-1
+	\end{pmatrix}\]
+	将$\*x_2, \*x_3$正交化、单位化, 得
+	\[\epsilon_2 = \frac{1}{\sqrt{2}}\begin{pmatrix}
+	1 \\
+	0 \\
+	-1
+	\end{pmatrix}, \epsilon_3 = \frac{1}{3\sqrt{2}}\begin{pmatrix}
+	-1 \\
+	4 \\
+	-1
+	\end{pmatrix}\]
+	于是得正交阵
+	\[ \*P = \begin{pmatrix}
+	\frac{2}{3} & \frac{1}{\sqrt{2}} & -\frac{1}{3\sqrt{2}} \\
+	\frac{1}{3} & 0 & \frac{2\sqrt{2}}{3} \\
+	\frac{2}{3} & -\frac{1}{\sqrt{2}} & -\frac{1}{3\sqrt{2}}
+	\end{pmatrix}, \text{使得}\*P^T\*A\*P = \begin{pmatrix}
+	8 & 0 & 0 \\
+	0 & -1 & 0 \\
+	0 & 0 & -1
+	\end{pmatrix}\]
+\end{proof}
+
+29.
+\begin{proof}[解]
+	$\*A$与$\*B$相似, $\*B$为对角阵, 则$\*B$的对角元就是$\*A$的全部特征值. 有
+	\[ \begin{cases}
+	tr(\*A) &= -1+2+y \\
+	\det(\*A) &= (-1)\cdot 2\cdot y
+	\end{cases} \]
+	解得$x-2=y$.
+	
+	将特征值$\lambda_1 = -1$代入$\*A$的特征方程组, 得
+	\[ \begin{pmatrix}
+	1 & 0 & 0 \\
+	-2 & -x-1 & -2 \\
+	-3 & -1 & -2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	其系数矩阵可由初等行变换化为
+	\[ \begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 2 \\
+	0 & x & 0
+	\end{pmatrix}\]
+	要使得特征向量存在, 必须令方程组有非零解, 所以$x=0, y=-2$. 解得属于特征值$-1$的特征向量为
+	\[\*x_1 = \begin{pmatrix}
+	0 \\
+	-2 \\
+	1
+	\end{pmatrix}\]
+	将特征值$\lambda_2 = 2$代入$\*A$的特征方程组, 得
+	\[ \begin{pmatrix}
+	4 & 0 & 0 \\
+	-2 & 2 & -2 \\
+	-3 & -1 & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0 \]
+	解得属于特征值$2$的特征向量为
+	\[\*x_2 = \begin{pmatrix}
+	0 \\
+	1 \\
+	1
+	\end{pmatrix}\]
+	将特征值$\lambda_3 = -2$代入$\*A$的特征方程组, 得
+	\[\begin{pmatrix}
+	0 & 0 & 0 \\
+	-2 & -2 & -2 \\
+	-3 & -1 & -3
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	解得属于特征值$-2$的特征向量为
+	\[\*x_3 = \begin{pmatrix}
+	-1 \\
+	0 \\
+	1
+	\end{pmatrix}\]
+	取
+	\[\*P = \begin{pmatrix}
+	\*x_1 & \*x_2 & \*x_3
+	\end{pmatrix} = \begin{pmatrix}
+	0 & 0 & -1 \\
+	-2 & 1 & 0 \\
+	1 & 1 & 1
+	\end{pmatrix}\]
+	则有
+	\[\*P^{-1}\*A\*P = \*B\]
+\end{proof}
+30.
+\begin{proof}[解]
+	$|\lambda I - A| = \left|
+	\begin{matrix}
+	\lambda & 0 & -1\\
+	-a & \lambda-1 & -b\\
+	-1 & 0 & \lambda
+	\end{matrix}
+	\right| = (\lambda - 1)^{2}(\lambda + 1) = 0$\\
+	解得特征值$\lambda_1 = \lambda_2 = 1, \lambda_3 = -1$\\
+	矩阵有3个线性无关的特征向量，则$\lambda_1 = \lambda_2 = 1$对应有两个线性无关的特征向量.\\
+	代入$\lambda_1 = \lambda_2 = 1$有
+	$$[\lambda I - A] = \left[
+	\begin{matrix}
+	1 & 0 & -1\\
+	-a & 0 & -b\\
+	-1 & 0 & 1
+	\end{matrix}
+	\right] \rightarrow \left[
+	\begin{matrix}
+	1 & 0 & -1\\
+	0 & 0 & -(a+b)\\
+	0 & 0 & 0
+	\end{matrix}
+	\right] $$
+	所以$a+b = 0$，此时有基础解系$(1,0,1)^{T},(0,1,0)^{T}$.
+	代入$\lambda_3 = -1$有
+	$$[\lambda I - A] = \left[
+	\begin{matrix}
+	-1 & 0 & -1\\
+	-a & -2 & -b\\
+	-1 & 0 & -1
+	\end{matrix}
+	\right] \rightarrow \left[
+	\begin{matrix}
+	1 & 0 & 1\\
+	0 & 2 & -2a\\
+	0 & 0 & 0
+	\end{matrix}
+	\right] $$
+	此时有基础解系$(-1,a,1)^{T}$.\\
+	所以
+	$$P = 
+	\left[
+	\begin{matrix}
+	1 & 0 & -1\\
+	0 & 1 & a\\
+	1 & 0 & 1
+	\end{matrix}
+	\right], P^{-1}AP = \left[
+	\begin{matrix}
+	1 & 0 & 0\\
+	0 & 1 & 0\\
+	0 & 0 & -1
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+31.
+\begin{proof}[解]
+	$|\lambda I - A| = \left|
+	\begin{matrix}
+	\lambda-1 & 1 & -1\\
+	-x & \lambda-4 & -y\\
+	3 & 3 & \lambda - 5
+	\end{matrix}
+	\right| = (\lambda - 2)(\lambda^{2}-8\lambda+16+x+3y) = 0$\\
+	$\lambda = 2$为2重特征值，所以$4+x+3y = 0$\\
+	则$|\lambda I - A| = (\lambda - 2)^{2}(\lambda-6) = 0$
+	解得特征值$\lambda_1 = \lambda_2 = 2, \lambda_3 = 6$\\
+	矩阵有3个线性无关的特征向量，则$\lambda_1 = \lambda_2 = 2$对应有两个线性无关的特征向量.\\
+	代入$\lambda_1 = \lambda_2 = 2$有
+	$$[\lambda I - A] = \left[
+	\begin{matrix}
+	1 & 1 & -1\\
+	-x & -2 & -y\\
+	3 & 3 & -3
+	\end{matrix}
+	\right] \rightarrow \left[
+	\begin{matrix}
+	1 & 1 & -1\\
+	0 & x-2 & -(x+y)\\
+	0 & 0 & 0
+	\end{matrix}
+	\right] $$
+	所以$x = 2, y = -2$，此时有基础解系$(1,0,1)^{T},(0,1,1)^{T}$.\\
+	代入$\lambda_3 = 6$有
+	$$[\lambda I - A] = \left[
+	\begin{matrix}
+	5 & 1 & -1\\
+	-2 & 2 & 2\\
+	3 & 3 & 1
+	\end{matrix}
+	\right] \rightarrow \left[
+	\begin{matrix}
+	1 & -1 & -1\\
+	0 & 3 & 2\\
+	0 & 0 & 0
+	\end{matrix}
+	\right] $$
+	此时有基础解系$(1,-2,3)^{T}$.\\
+	所以
+	$$P = 
+	\left[
+	\begin{matrix}
+	1 & 0 & 1\\
+	0 & 1 & -2\\
+	1 & 1 & 3
+	\end{matrix}
+	\right], P^{-1}AP = \left[
+	\begin{matrix}
+	2 & 0 & 0\\
+	0 & 2 & 0\\
+	0 & 0 & 6
+	\end{matrix}
+	\right]
+	$$
+\end{proof}
+32.
+\begin{proof}[解]
+	记$\*A = \begin{pmatrix}
+	1 & 2 & 2 \\
+	2 & 1 & 2 \\
+	2 & 2 & 1 
+	\end{pmatrix}$.
+	\[|\lambda\*I - \*A | = \begin{vmatrix}
+	\lambda-1 & -2 & -2 \\
+	-2 & \lambda-1 & -2 \\
+	-2 & -2 & \lambda-1
+	\end{vmatrix} = (\lambda-5)(\lambda+1)^2 \]
+	所以$\*A$的特征值为$\lambda_1 = 5, \lambda_2 = \lambda_3 = -1$.
+	
+	将$\lambda_1 = 5$代入特征方程组, 有
+	\[\begin{pmatrix}
+	4 & -2 & -2 \\
+	-2 & 4 & -2 \\
+	-2 & -2 & 4
+	\end{pmatrix}\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	解得属于特征值$5$的特征向量为
+	\[\*x_1 = \begin{pmatrix}
+	1 \\
+	1 \\
+	1
+	\end{pmatrix}\]
+	
+	将$\lambda_2 = \lambda_3 = -1$代入特征方程组, 有
+	\[\begin{pmatrix}
+	-2 & -2 & -2  \\
+	-2 & -2 & -2 \\
+	-2 & -2 & -2
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} = \*0\]
+	解得属于特征值$-1$的线性无关的特征向量为
+	\[\*x_2 = \begin{pmatrix}
+	-1 \\
+	1 \\
+	0
+	\end{pmatrix}, 
+	\*x_3 = \begin{pmatrix}
+	-1 \\
+	0 \\
+	1
+	\end{pmatrix} \]
+	所以$\*A$可对角化, 取
+	\[\*P = \begin{pmatrix}
+	\*x_1 & \*x_2 & \*x_3
+	\end{pmatrix} = \begin{pmatrix}
+	1 & -1 & -1 \\
+	1 & 1 & 0 \\
+	1 & 0 & 1
+	\end{pmatrix}\]
+	则有
+	\[\*P^{-1}\*A\*P = \begin{pmatrix}
+	5 & 0 & 0 \\
+	0 & -1 & 0 \\
+	0 & 0 & -1
+	\end{pmatrix}\]
+	\[ \*A^{100} = \*P\begin{pmatrix}
+	5^{100} & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1
+	\end{pmatrix} \*P^{-1} = \frac{1}{3} \begin{pmatrix}
+	5^{100}+2 & 5^{100}-1 & 5^{100}-1 \\
+	5^{100}-1 & 5^{100}+2 & 5^{100}-1 \\
+	5^{100}-1 & 5^{100}-1 & 5^{100}+2
+	\end{pmatrix} \]
+\end{proof}
+35.
+\begin{proof}[解]
+	此二次型的矩阵表示式为
+	\[ \*x^T\*A\*x = \begin{pmatrix}
+	x_1 & x_2 & x_3
+	\end{pmatrix}\begin{pmatrix}
+	1 & -2 & 2 \\
+	-2 & 4 & -4 \\
+	2 & -4 & 4
+	\end{pmatrix}\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3
+	\end{pmatrix} \]
+	先求$\*A$的特征值和特征向量
+	\[ |\lambda\*I - \*A | = \begin{vmatrix}
+	\lambda - 1 & 2 & -2 \\
+	2 & \lambda - 4 & 4 \\
+	-2 & 4 & \lambda - 4
+	\end{vmatrix} = \lambda^2(\lambda - 9) \]
+	所以$\*A$的特征值为$\lambda_1 = 9, \lambda_2=\lambda_3 = 0$.
+	
+	将$\lambda_1$代入特征方程$(\lambda\*I - \*A)\alpha = \*0$中, 即有
+	\[\begin{pmatrix}
+	8 & 2 & -2 \\
+	2 & 5 & 4 \\
+	-2 & 4 & 5
+	\end{pmatrix}\alpha = \*0 \]
+	解得它的一个基础解系为$\alpha_1 = [1, -2, 2]^T$, 同样, 将$\lambda_2 = \lambda_3 = 0$代入特征方程中, 求得它的基础解系为
+	\[\alpha_2 = [2, 0, -1]^T, \alpha_3 = [0, 1, 1]^T\]
+	将$\alpha_1, \alpha_2, \alpha_3$单位正交化, 注意到$\alpha_1$已与$\alpha_2, \alpha_3$正交,  
+	\begin{align*}
+	\epsilon_1 &= \frac{\alpha_1}{|\alpha_1|} = \frac{1}{3} [1, -2, 2]^T \\
+	\epsilon_2 &= \frac{\alpha_2}{|\alpha_2|} = \frac{1}{\sqrt{5}} [2, 0, -1]^T \\
+	\epsilon_3 &= \frac{\alpha_3 - \epsilon_2\epsilon_2^T\alpha_3}{\alpha_3 - \epsilon_2\epsilon_2^T\alpha_3} = \frac{1}{\sqrt{39}} [2, 5, 4]^T
+	\end{align*}
+	以$\epsilon_1, \epsilon_2, \epsilon_3$组成正交矩阵 
+	\[\*P = \begin{pmatrix}
+	\frac{1}{3} & \frac{2}{\sqrt{5}} & \frac{2}{\sqrt{39}} \\
+	-\frac{2}{3} & 0 & \frac{5}{\sqrt{39}} \\
+	\frac{2}{3} & -\frac{1}{\sqrt{5}} & \frac{4}{\sqrt{39}}
+	\end{pmatrix}\]
+	作正交变换$\*y = \*P^T\*x$, 在此变换下, 二次型化为标准形, 即
+	\begin{align*}
+	f(x_1, x_2, x_3) &= \*x^T\*A\*x \stackrel{\*A = \*P\Lambda\*P^T}{=} \*x^T\*P\Lambda \*P^T \*x \stackrel{\*y = \*P^T\*x}{=} \*y^T\Lambda \*y \\
+	&= \begin{pmatrix}
+	y_1 & y_2 & y_3
+	\end{pmatrix} \begin{pmatrix}
+	9 & 0 & 0 \\
+	0 & 0 & 0 \\
+	0 & 0 & 0
+	\end{pmatrix}\begin{pmatrix}
+	y_1 \\
+	y_2 \\
+	y_3
+	\end{pmatrix} \\
+	&= 9y_1^2
+	\end{align*}
+\end{proof}
+
+36. 更正: 特征值之积为-12.
+\begin{proof}[解]
+	由
+	\begin{align*}
+	\begin{cases}
+	tr(\*A) &= a = 1 \\
+	\det(\*A) &= -2b^2 - 4a = -12 
+	\end{cases}
+	\end{align*}
+	解得$a = 1, b = 2$.
+	
+	求得$\*A$的特征值和特征向量为
+	\begin{align*}
+	\text{特征值}\lambda_1 = -3\text{对应的特征向量为}\alpha_1 = [1, 0, -2]^T \\
+	\text{特征值}\lambda_2 = \lambda_3 = 2 \text{对应的特征向量为} \alpha_2 = [2, 0, 1]^T, \alpha_3 = [0, 1, 0]^T
+	\end{align*}
+	$\alpha_1, \alpha_2, \alpha_3$已正交, 只需单位化, 
+	\begin{align*}
+	\epsilon_1 &= \frac{1}{\sqrt{5}}[1, 0, -2]^T \\
+	\epsilon_2 &= \frac{1}{\sqrt{5}}[2, 0, 1]^T \\
+	\epsilon_3 &= [0, 1, 0]^T
+	\end{align*}
+	以$\epsilon_1, \epsilon_2, \epsilon_3$组成正交矩阵,
+	\[\*P = \frac{1}{\sqrt{5}} \begin{pmatrix}
+	1 & 2 & 0 \\
+	0 & 0 & \sqrt{5} \\
+	-2 & 1 & 0
+	\end{pmatrix}\]
+	作正交变换$\*y = \*P^T \*x$, 在此变换下, 二次型化为标准形, 即
+	\[ f(x_1, x_2, x_3) = -3y_1^2 + 2y_2^2 + 2y_3^2 \]
+\end{proof}
+39
+\begin{proof}[解]
+	判断是否所有顺序主子式都大于0即可，懒得写了..........
+\end{proof}
+\end{document}
